@@ -3,1785 +3,1009 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4-Month Instagram Growth Strategy — Kiệt Finance</title>
+  <title>Kiệt Finance — High-Ticket Strategy v2.1</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
     :root {
-      --bg: #080c18;
-      --surface: #0f1628;
-      --surface2: #161d35;
-      --border: rgba(255,255,255,0.07);
-      --gold: #f5c842;
-      --teal: #00d4aa;
-      --blue: #3b82f6;
-      --red: #ef4444;
-      --text: #e8eaf0;
-      --muted: #7a84a0;
-      --radius: 14px;
+      --bg:#080c18;--surface:#0f1628;--surface2:#161d35;
+      --border:rgba(255,255,255,0.07);--gold:#f5c842;--teal:#00d4aa;
+      --blue:#3b82f6;--red:#ef4444;--purple:#a855f7;
+      --text:#e8eaf0;--muted:#7a84a0;--radius:14px;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 60px;
-      background:
-        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0,212,170,0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(245,200,66,0.05) 0%, transparent 70%),
-        var(--bg);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      right: 0; top: 0; bottom: 0;
-      width: 45%;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,250 40,220 80,240 120,180 160,200 200,140 240,160 280,80 320,100 360,40 400,60' fill='none' stroke='%2300d4aa' stroke-width='1.5' opacity='0.3'/%3E%3Cpolyline points='0,280 40,260 80,270 120,230 160,250 200,200 240,220 280,160 320,180 360,120 400,140' fill='none' stroke='%23f5c842' stroke-width='1' opacity='0.15'/%3E%3C/svg%3E") center/contain no-repeat;
-      opacity: 0.6;
-    }
-
-    .hero-tag {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      max-width: 680px;
-    }
-
-    .hero h1 span { color: var(--gold); }
-
-    .hero-sub {
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 40px;
-    }
-
-    .hero-meta {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .hero-meta-item { font-size: 13px; color: var(--muted); }
-    .hero-meta-item strong { color: var(--text); display: block; font-size: 15px; }
-
-    /* ─── SECTION ─── */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 40px;
-    }
-
-    .section + .section { border-top: 1px solid var(--border); }
-
-    .section-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: clamp(26px, 3vw, 40px);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 40px;
-    }
-
-    .section-title span { color: var(--gold); }
-
-    /* ─── CARDS ─── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-    }
-
-    .card-title {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-
-    @media (max-width: 768px) {
-      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-      .hero { padding: 60px 24px; }
-      .section { padding: 60px 24px; }
-      .hero::before { display: none; }
-    }
-
-    /* ─── WHO IS KIET ─── */
-    .quote-block {
-      border-left: 3px solid var(--gold);
-      padding: 20px 28px;
-      background: var(--surface);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      font-size: 16px;
-      font-style: italic;
-      color: var(--text);
-      margin: 32px 0;
-    }
-
-    .not-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .not-list li { display: flex; align-items: center; gap: 10px; color: var(--muted); }
-    .not-list li::before { content: '✕'; color: var(--red); font-weight: 700; font-size: 13px; }
-    .is-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .is-list li { display: flex; align-items: flex-start; gap: 10px; }
-    .is-list li::before { content: '→'; color: var(--teal); font-weight: 700; margin-top: 2px; }
-
-    /* ─── TWO PATHS ─── */
-    .paths-grid {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 0;
-      align-items: stretch;
-    }
-
-    .path-card {
-      padding: 36px 32px;
-      border-radius: var(--radius);
-    }
-
-    .path-card.trading {
-      background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.04));
-      border: 1px solid rgba(59,130,246,0.25);
-    }
-
-    .path-card.ib {
-      background: linear-gradient(135deg, rgba(0,212,170,0.12), rgba(0,212,170,0.04));
-      border: 1px solid rgba(0,212,170,0.25);
-    }
-
-    .path-divider {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0 28px;
-      gap: 12px;
-    }
-
-    .path-divider-line {
-      width: 1px;
-      flex: 1;
-      background: var(--border);
-    }
-
-    .path-divider-label {
-      writing-mode: vertical-rl;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .path-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .path-card.trading .path-label { color: var(--blue); }
-    .path-card.ib .path-label { color: var(--teal); }
-
-    .path-title {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .req-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-    .req-list li { font-size: 14px; color: var(--muted); display: flex; gap: 8px; }
-    .req-list li .dot { color: var(--gold); margin-top: 2px; }
-    .req-list.no li .dot { color: var(--red); }
-
-    @media (max-width: 900px) {
-      .paths-grid { grid-template-columns: 1fr; }
-      .path-divider { flex-direction: row; padding: 16px 0; }
-      .path-divider-line { flex: 1; height: 1px; width: auto; }
-      .path-divider-label { writing-mode: horizontal-tb; }
-    }
-
-    /* ─── BRAND VOICE ─── */
-    .voice-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-
-    .voice-card {
-      padding: 24px 28px;
-      border-radius: var(--radius);
-    }
-
-    .voice-card.is-card {
-      background: rgba(0,212,170,0.07);
-      border: 1px solid rgba(0,212,170,0.2);
-    }
-
-    .voice-card.not-card {
-      background: rgba(239,68,68,0.06);
-      border: 1px solid rgba(239,68,68,0.15);
-    }
-
-    .voice-card-title {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .voice-card.is-card .voice-card-title { color: var(--teal); }
-    .voice-card.not-card .voice-card-title { color: var(--red); }
-
-    .say-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .say-list li { font-size: 14px; color: var(--muted); font-style: italic; position: relative; padding-left: 16px; }
-    .say-list li::before { content: '"'; position: absolute; left: 0; color: var(--gold); font-style: normal; font-weight: 700; }
-
-    /* ─── PILLARS ─── */
-    .pillar-card {
-      padding: 28px 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pillar-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-    }
-
-    .pillar-card.p1::before { background: var(--blue); }
-    .pillar-card.p2::before { background: var(--gold); }
-    .pillar-card.p3::before { background: var(--teal); }
-    .pillar-card.p4::before { background: #a855f7; }
-
-    .pillar-num {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .p1 .pillar-num { color: var(--blue); }
-    .p2 .pillar-num { color: var(--gold); }
-    .p3 .pillar-num { color: var(--teal); }
-    .p4 .pillar-num { color: #a855f7; }
-
-    .pillar-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
-    .pillar-ratio {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-    .p1 .pillar-ratio { color: var(--blue); }
-    .p2 .pillar-ratio { color: var(--gold); }
-    .p3 .pillar-ratio { color: var(--teal); }
-    .p4 .pillar-ratio { color: #a855f7; }
-
-    .pillar-ratio-sub { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
-    .pillar-detail { font-size: 13px; color: var(--muted); line-height: 1.6; }
-    .pillar-detail strong { color: var(--text); }
-
-    /* ─── SCHEDULE ─── */
-    .schedule-row {
-      display: grid;
-      grid-template-columns: 100px 1fr 140px;
-      gap: 16px;
-      padding: 16px 24px;
-      border-radius: 10px;
-      align-items: center;
-    }
-
-    .schedule-row:nth-child(odd) { background: var(--surface); }
-
-    .schedule-day { font-size: 13px; font-weight: 600; color: var(--muted); }
-    .schedule-content { font-size: 14px; }
-    .schedule-pillar {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-align: right;
-    }
-
-    .tag-viral { color: var(--blue); }
-    .tag-authority { color: var(--gold); }
-    .tag-education { color: var(--teal); }
-    .tag-proof { color: #a855f7; }
-
-    /* ─── JOURNEY ─── */
-    .journey {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0;
-      margin-top: 40px;
-    }
-
-    .journey-step {
-      flex: 1;
-      min-width: 120px;
-      text-align: center;
-      padding: 20px 12px;
-    }
-
-    .journey-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 10px;
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .journey-label { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-    .journey-sub { font-size: 11px; color: var(--muted); }
-
-    .journey-arrow {
-      color: var(--muted);
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-
-    /* ─── MONTH ─── */
-    .month-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-
-    .month-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 6px 16px 6px 8px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .month-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .month-goal {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px 24px;
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-
-    .month-goal strong { color: var(--text); }
-
-    .phase-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      margin-bottom: 20px;
-    }
-
-    .phase-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .phase-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-    .phase-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
-
-    .content-table { width: 100%; border-collapse: collapse; }
-
-    .content-table th {
-      text-align: left;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 8px 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .content-table td {
-      padding: 12px;
-      font-size: 13.5px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      vertical-align: top;
-    }
-
-    .content-table tr:last-child td { border-bottom: none; }
-
-    .pillar-tag {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 100px;
-      white-space: nowrap;
-    }
-
-    .pt-viral { background: rgba(59,130,246,0.15); color: var(--blue); }
-    .pt-authority { background: rgba(245,200,66,0.15); color: var(--gold); }
-    .pt-education { background: rgba(0,212,170,0.15); color: var(--teal); }
-    .pt-proof { background: rgba(168,85,247,0.15); color: #a855f7; }
-
-    .hook-text { color: var(--muted); font-style: italic; }
-    .hook-text strong { color: var(--text); font-style: normal; }
-
-    .kpi-bar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 16px;
-      padding: 12px 16px;
-      background: var(--surface2);
-      border-radius: 8px;
-      font-size: 13px;
-    }
-
-    .kpi-bar-label { color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; min-width: 40px; }
-    .kpi-bar-value { color: var(--gold); font-weight: 600; }
-
-    /* ─── KPI DASHBOARD ─── */
-    .kpi-table { width: 100%; border-collapse: collapse; }
-    .kpi-table th {
-      text-align: left;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-    }
-    .kpi-table td {
-      padding: 14px 16px;
-      font-size: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .kpi-table tr:last-child td { border-bottom: none; }
-    .kpi-table tr:hover td { background: rgba(255,255,255,0.02); }
-    .kpi-table .metric-name { color: var(--muted); font-size: 13px; }
-    .kpi-val { font-weight: 600; font-size: 14px; }
-    .kpi-t1 { color: #7a84a0; }
-    .kpi-t2 { color: var(--blue); }
-    .kpi-t3 { color: var(--teal); }
-    .kpi-t4 { color: var(--gold); }
-
-    /* ─── CONDITIONS ─── */
-    .condition-item {
-      display: flex;
-      gap: 20px;
-      padding: 24px 28px;
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      transition: border-color 0.2s;
-    }
-
-    .condition-item:hover { border-color: rgba(245,200,66,0.3); }
-
-    .condition-num {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--gold);
-      opacity: 0.4;
-      line-height: 1;
-      min-width: 32px;
-    }
-
-    .condition-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .condition-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* ─── FOOTER ─── */
-    .footer {
-      text-align: center;
-      padding: 60px 40px;
-      border-top: 1px solid var(--border);
-      background: var(--surface);
-    }
-
-    .footer-logo { font-size: 22px; font-weight: 800; color: var(--gold); margin-bottom: 8px; }
-    .footer-sub { font-size: 13px; color: var(--muted); }
-
-    /* ─── NAV ─── */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(8,12,24,0.9);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 40px;
-      display: flex;
-      align-items: center;
-      gap: 0;
-      overflow-x: auto;
-    }
-
-    .nav-logo { font-size: 14px; font-weight: 800; color: var(--gold); padding: 16px 0; margin-right: 32px; white-space: nowrap; }
-
-    .nav a {
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--muted);
-      padding: 18px 14px;
-      white-space: nowrap;
-      transition: color 0.2s;
-    }
-
-    .nav a:hover { color: var(--text); }
-
-    /* ─── DIVIDER ─── */
-    .divider { height: 1px; background: var(--border); }
-
-    /* ─── ACCENT BLOCK ─── */
-    .accent-block {
-      background: linear-gradient(135deg, rgba(245,200,66,0.08), rgba(0,212,170,0.05));
-      border: 1px solid rgba(245,200,66,0.2);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      margin-bottom: 32px;
-    }
-
-    .accent-block p { font-size: 16px; color: var(--text); font-style: italic; line-height: 1.7; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;}
+    .nav{position:sticky;top:0;z-index:100;background:rgba(8,12,24,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;overflow-x:auto;}
+    .nav-logo{font-size:14px;font-weight:800;color:var(--gold);padding:16px 0;margin-right:32px;white-space:nowrap;}
+    .nav a{text-decoration:none;font-size:12px;font-weight:500;color:var(--muted);padding:18px 14px;white-space:nowrap;transition:color .2s;}
+    .nav a:hover{color:var(--text);}
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 60px;background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(245,200,66,.06) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 15% 80%,rgba(0,212,170,.04) 0%,transparent 70%),var(--bg);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;right:0;top:0;bottom:0;width:45%;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,260 50,230 100,245 150,180 200,210 250,140 300,165 350,80 400,100' fill='none' stroke='%23f5c842' stroke-width='1.5' opacity='0.25'/%3E%3Cpolyline points='0,280 50,265 100,270 150,240 200,255 250,210 300,230 350,175 400,195' fill='none' stroke='%2300d4aa' stroke-width='1' opacity='0.12'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.7;}
+    .hero-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:20px;}
+    .hero h1{font-size:clamp(34px,5vw,62px);font-weight:800;line-height:1.1;margin-bottom:20px;max-width:700px;}
+    .hero h1 span{color:var(--gold);}
+    .hero-sub{font-size:17px;color:var(--muted);max-width:540px;margin-bottom:40px;line-height:1.7;}
+    .hero-meta{display:flex;gap:40px;flex-wrap:wrap;}
+    .hero-meta-item .label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+    .hero-meta-item .val{font-size:16px;font-weight:700;}
+    .val.gold{color:var(--gold);} .val.teal{color:var(--teal);} .val.red{color:var(--red);}
+    .section{max-width:1100px;margin:0 auto;padding:80px 40px;}
+    .section+.section{border-top:1px solid var(--border);}
+    .section-tag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+    .section-title{font-size:clamp(24px,3vw,38px);font-weight:800;line-height:1.15;margin-bottom:40px;}
+    .section-title span{color:var(--gold);}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;}
+    .card-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr;}.hero{padding:60px 24px;}.section{padding:60px 24px;}.hero::before{display:none;}}
+    .check-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .check-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;}
+    .check-list li::before{content:'→';color:var(--teal);font-weight:700;margin-top:2px;flex-shrink:0;}
+    .x-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .x-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--muted);}
+    .x-list li::before{content:'✕';color:var(--red);font-weight:700;margin-top:2px;flex-shrink:0;}
+    /* BRAND */
+    .brand-core{background:linear-gradient(135deg,rgba(245,200,66,.08),rgba(0,212,170,.04));border:1px solid rgba(245,200,66,.2);border-radius:var(--radius);padding:36px 40px;margin-bottom:32px;}
+    .brand-statement{font-size:clamp(18px,2.5vw,26px);font-weight:700;line-height:1.5;margin-bottom:16px;}
+    .brand-sub{font-size:14px;color:var(--muted);font-style:italic;}
+    .pos3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px;}
+    @media(max-width:768px){.pos3{grid-template-columns:1fr;}}
+    .pos-box{background:var(--surface2);border-radius:10px;padding:20px 24px;}
+    .pos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+    .pos-label.gold{color:var(--gold);} .pos-label.teal{color:var(--teal);} .pos-label.red{color:var(--red);}
+    .pos-box p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+    .pos-box p strong{color:var(--text);}
+    /* STORY ARC */
+    .arc-block{display:grid;grid-template-columns:140px 1fr;gap:0;margin-bottom:0;}
+    .arc-block+.arc-block{border-top:1px solid var(--border);}
+    .arc-phase{padding:28px 24px 28px 0;border-right:1px solid var(--border);}
+    .arc-phase-num{font-size:30px;font-weight:800;color:var(--gold);margin-bottom:4px;}
+    .arc-phase-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+    .arc-content{padding:28px 0 28px 32px;}
+    .arc-content-title{font-size:16px;font-weight:700;margin-bottom:8px;}
+    .arc-content p{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:8px;}
+    .arc-content p strong{color:var(--text);}
+    .arc-data{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+    .arc-chip{background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.2);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:600;color:var(--gold);}
+    /* TIMELINE */
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-bottom:40px;}
+    .timeline::before{content:'';position:absolute;top:28px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--teal),var(--blue),var(--gold),var(--purple));opacity:.4;}
+    @media(max-width:768px){.timeline{grid-template-columns:1fr;}.timeline::before{display:none;}}
+    .tl-item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;position:relative;}
+    .tl-dot{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin-bottom:16px;position:relative;z-index:1;}
+    .tl-dot.m1{background:rgba(0,212,170,.15);border:2px solid var(--teal);color:var(--teal);}
+    .tl-dot.m2{background:rgba(59,130,246,.15);border:2px solid var(--blue);color:var(--blue);}
+    .tl-dot.m3{background:rgba(245,200,66,.15);border:2px solid var(--gold);color:var(--gold);}
+    .tl-dot.m4{background:rgba(168,85,247,.15);border:2px solid var(--purple);color:var(--purple);}
+    .tl-month{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+    .tl-name{font-size:15px;font-weight:700;margin-bottom:6px;}
+    .tl-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+    /* PHASE DISTRIBUTION */
+    .phase-dist{border-radius:var(--radius);overflow:hidden;margin-bottom:24px;}
+    .pd-m1{background:linear-gradient(135deg,rgba(0,212,170,.08),rgba(0,212,170,.02));border:1px solid rgba(0,212,170,.22);}
+    .pd-m2{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(59,130,246,.02));border:1px solid rgba(59,130,246,.22);}
+    .pd-m3{background:linear-gradient(135deg,rgba(245,200,66,.08),rgba(245,200,66,.02));border:1px solid rgba(245,200,66,.22);}
+    .pd-m4{background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(168,85,247,.02));border:1px solid rgba(168,85,247,.22);}
+    .pd-header{padding:22px 28px 16px;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;}
+    .pd-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+    .pd-m1 .pd-tag{color:var(--teal);} .pd-m2 .pd-tag{color:var(--blue);}
+    .pd-m3 .pd-tag{color:var(--gold);} .pd-m4 .pd-tag{color:var(--purple);}
+    .pd-title{font-size:18px;font-weight:800;}
+    .pd-body{padding:20px 28px 24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    @media(max-width:768px){.pd-body{grid-template-columns:1fr;}.pd-header{padding:16px 20px;}.pd-body{padding:16px 20px;}}
+    .pd-col-title{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+    .angle-ratio-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+    .angle-label-sm{font-size:12px;color:var(--muted);min-width:120px;}
+    .angle-bar{height:6px;border-radius:3px;flex:1;}
+    .angle-pct{font-size:12px;font-weight:600;color:var(--text);min-width:36px;text-align:right;}
+    .kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    .kpi-chip{background:rgba(0,0,0,.3);border-radius:8px;padding:12px 16px;}
+    .kpi-chip-label{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+    .kpi-chip-val{font-size:16px;font-weight:700;}
+    .kpi-chip-val.teal{color:var(--teal);} .kpi-chip-val.blue{color:var(--blue);}
+    .kpi-chip-val.gold{color:var(--gold);} .kpi-chip-val.purple{color:var(--purple);}
+    /* ANGLES */
+    .angle-block{border-radius:var(--radius);overflow:hidden;margin-bottom:24px;}
+    .ab-1{background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(239,68,68,.02));border:1px solid rgba(239,68,68,.25);}
+    .ab-2{background:linear-gradient(135deg,rgba(0,212,170,.08),rgba(0,212,170,.02));border:1px solid rgba(0,212,170,.25);}
+    .ab-3{background:linear-gradient(135deg,rgba(245,200,66,.08),rgba(245,200,66,.02));border:1px solid rgba(245,200,66,.25);}
+    .ab-4{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(59,130,246,.02));border:1px solid rgba(59,130,246,.25);}
+    .ab-5{background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(168,85,247,.02));border:1px solid rgba(168,85,247,.25);}
+    .ab-6{background:linear-gradient(135deg,rgba(245,200,66,.06),rgba(59,130,246,.04));border:1px solid rgba(245,200,66,.2);}
+    .ab-7{background:linear-gradient(135deg,rgba(0,212,170,.06),rgba(168,85,247,.04));border:1px solid rgba(0,212,170,.2);}
+    .angle-header{padding:22px 28px 16px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;}
+    @media(max-width:768px){.angle-header{flex-direction:column;}}
+    .angle-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
+    .ab-1 .angle-num{color:var(--red);} .ab-2 .angle-num{color:var(--teal);}
+    .ab-3 .angle-num{color:var(--gold);} .ab-4 .angle-num{color:var(--blue);}
+    .ab-5 .angle-num{color:var(--purple);} .ab-6 .angle-num{color:var(--gold);} .ab-7 .angle-num{color:var(--teal);}
+    .angle-name{font-size:19px;font-weight:800;}
+    .angle-badge{padding:5px 12px;border-radius:100px;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0;}
+    .badge-red{background:rgba(239,68,68,.15);color:var(--red);}
+    .badge-teal{background:rgba(0,212,170,.15);color:var(--teal);}
+    .badge-gold{background:rgba(245,200,66,.15);color:var(--gold);}
+    .badge-blue{background:rgba(59,130,246,.15);color:var(--blue);}
+    .badge-purple{background:rgba(168,85,247,.15);color:var(--purple);}
+    .angle-body{padding:0 28px 24px;}
+    .angle-desc{font-size:13.5px;color:var(--muted);margin-bottom:18px;line-height:1.7;}
+    .angle-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+    @media(max-width:768px){.angle-row{grid-template-columns:1fr;}}
+    .angle-box{background:rgba(0,0,0,.25);border-radius:8px;padding:15px 18px;}
+    .angle-box-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+    .angle-box p{font-size:13px;color:var(--text);line-height:1.65;}
+    .angle-box p em{color:var(--muted);font-style:italic;}
+    .hook-ex{background:rgba(255,255,255,.04);border-left:2px solid;border-radius:0 6px 6px 0;padding:8px 14px;margin-bottom:6px;font-size:13px;font-style:italic;color:var(--text);}
+    .ab-1 .hook-ex{border-color:var(--red);} .ab-2 .hook-ex{border-color:var(--teal);}
+    .ab-3 .hook-ex{border-color:var(--gold);} .ab-4 .hook-ex{border-color:var(--blue);}
+    .ab-5 .hook-ex{border-color:var(--purple);} .ab-6 .hook-ex{border-color:var(--gold);} .ab-7 .hook-ex{border-color:var(--teal);}
+    .angle-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+    .meta-pill{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--muted);}
+    .meta-pill strong{color:var(--text);}
+    /* FUNNEL */
+    .funnel-visual{display:flex;flex-direction:column;gap:0;margin-bottom:32px;}
+    .funnel-step{padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;border:1px solid var(--border);background:var(--surface);margin-bottom:-1px;}
+    .funnel-step:first-child{border-radius:var(--radius) var(--radius) 0 0;}
+    .funnel-step:last-child{border-radius:0 0 var(--radius) var(--radius);margin-bottom:0;}
+    .funnel-arrow{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--surface2);border-radius:50%;font-size:18px;color:var(--gold);font-weight:700;flex-shrink:0;}
+    .funnel-step-title{font-size:15px;font-weight:700;margin-bottom:4px;}
+    .funnel-step-sub{font-size:13px;color:var(--muted);line-height:1.65;}
+    /* PLATFORM COMPARE */
+    .platform-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+    @media(max-width:768px){.platform-row{grid-template-columns:1fr;}}
+    .platform-card{border-radius:var(--radius);padding:28px 32px;}
+    .tg-card{background:linear-gradient(135deg,rgba(0,136,204,.12),rgba(0,136,204,.04));border:1px solid rgba(0,136,204,.3);}
+    .dc-card{background:linear-gradient(135deg,rgba(88,101,242,.12),rgba(88,101,242,.04));border:1px solid rgba(88,101,242,.3);}
+    .platform-logo{font-size:22px;font-weight:800;margin-bottom:4px;}
+    .tg-card .platform-logo{color:#2aabee;}
+    .dc-card .platform-logo{color:#7289da;}
+    .platform-subtitle{font-size:12px;color:var(--muted);margin-bottom:20px;}
+    .pro-con-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+    .pro-box{background:rgba(0,212,170,.06);border:1px solid rgba(0,212,170,.15);border-radius:8px;padding:14px 16px;}
+    .con-box{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.12);border-radius:8px;padding:14px 16px;}
+    .pc-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+    .pro-box .pc-label{color:var(--teal);} .con-box .pc-label{color:var(--red);}
+    .pc-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+    .pc-list li{font-size:12.5px;color:var(--muted);line-height:1.5;}
+    /* PAID GROUP */
+    .paid-compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+    @media(max-width:768px){.paid-compare{grid-template-columns:1fr;}}
+    .paid-box{border-radius:var(--radius);padding:24px 28px;}
+    .paid-yes{background:rgba(0,212,170,.06);border:1px solid rgba(0,212,170,.2);}
+    .paid-no{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);}
+    .paid-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+    .paid-yes .paid-label{color:var(--teal);} .paid-no .paid-label{color:var(--red);}
+    .paid-box p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:6px;}
+    .paid-box p strong{color:var(--text);}
+    /* VERDICT */
+    .verdict-block{background:linear-gradient(135deg,rgba(245,200,66,.08),rgba(0,212,170,.04));border:1px solid rgba(245,200,66,.2);border-radius:var(--radius);padding:28px 32px;margin-bottom:24px;}
+    .verdict-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .verdict-text{font-size:16px;font-weight:700;line-height:1.6;margin-bottom:8px;}
+    .verdict-sub{font-size:13.5px;color:var(--muted);line-height:1.7;}
+    /* CHECKPOINTS */
+    .checkpoint-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 28px;margin-bottom:14px;display:grid;grid-template-columns:110px 1fr;gap:24px;align-items:start;}
+    @media(max-width:768px){.checkpoint-block{grid-template-columns:1fr;gap:12px;}}
+    .cp-week{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+    .cp-title{font-size:15px;font-weight:700;}
+    .cp-title.teal{color:var(--teal);} .cp-title.blue{color:var(--blue);}
+    .cp-title.gold{color:var(--gold);} .cp-title.purple{color:var(--purple);}
+    .cp-checks{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:8px;}
+    .cp-checks li{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;}
+    .cp-checks li::before{content:'◦';color:var(--border);flex-shrink:0;margin-top:1px;}
+    .cp-checks li strong{color:var(--text);}
+    /* BACKUP */
+    .backup-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+    @media(max-width:768px){.backup-pair{grid-template-columns:1fr;}}
+    .bp-s{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:var(--radius);padding:18px 22px;}
+    .bp-a{background:rgba(0,212,170,.06);border:1px solid rgba(0,212,170,.15);border-radius:var(--radius);padding:18px 22px;}
+    .bp-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;}
+    .bp-s .bp-label{color:var(--red);} .bp-a .bp-label{color:var(--teal);}
+    .bp-title{font-size:14px;font-weight:700;margin-bottom:6px;}
+    .bp-body{font-size:13px;color:var(--muted);line-height:1.6;}
+    /* TOOLS */
+    .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    @media(max-width:768px){.tool-grid{grid-template-columns:1fr;}}
+    .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;}
+    .tool-cat{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+    .tool-name{font-size:16px;font-weight:700;color:var(--gold);margin-bottom:8px;}
+    .tool-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+    .tool-use{font-size:12px;font-weight:600;color:var(--teal);margin-top:10px;}
+    /* MISC */
+    .warn{background:rgba(245,200,66,.07);border:1px solid rgba(245,200,66,.22);border-radius:var(--radius);padding:14px 22px;font-size:13px;color:var(--gold);margin-bottom:28px;}
+    .accent-quote{background:linear-gradient(135deg,rgba(245,200,66,.06),rgba(0,212,170,.04));border:1px solid rgba(245,200,66,.15);border-radius:var(--radius);padding:24px 32px;margin-bottom:28px;font-size:15px;font-style:italic;color:var(--text);line-height:1.7;}
+    .phase-tag-block{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;padding:3px 0;}
+    .footer{text-align:center;padding:60px 40px;border-top:1px solid var(--border);background:var(--surface);}
+    .footer-logo{font-size:22px;font-weight:800;color:var(--gold);margin-bottom:8px;}
+    .footer-sub{font-size:13px;color:var(--muted);}
+    .ht-badge{display:inline-block;background:rgba(245,200,66,.15);border:1px solid rgba(245,200,66,.3);border-radius:100px;padding:3px 12px;font-size:11px;font-weight:700;color:var(--gold);}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">Kiệt × SOS</div>
-  <a href="#rolemodel">Role Model</a>
-  <a href="#brand">Định vị</a>
-  <a href="#paths">Hai con đường</a>
-  <a href="#pillars">4 Trụ cột</a>
-  <a href="#month1">Tháng 1</a>
-  <a href="#month2">Tháng 2</a>
-  <a href="#month3">Tháng 3</a>
-  <a href="#month4">Tháng 4</a>
-  <a href="#kpi">KPI</a>
+  <a href="#brand">Định vị thương hiệu</a>
+  <a href="#avatar">Chân dung khách hàng</a>
+  <a href="#story">Hành trình</a>
+  <a href="#roadmap">Lộ trình</a>
+  <a href="#distribution">Phân phối nội dung</a>
+  <a href="#angles">Góc độ nội dung</a>
+  <a href="#funnel">Phễu bán hàng</a>
+  <a href="#platform">Telegram vs Discord</a>
+  <a href="#tools">Công cụ AI</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-tag">SOS Agency × Kiệt Finance — Tháng 4/2026</div>
-  <h1>Kế hoạch Instagram <span>4 tháng</span></h1>
-  <p class="hero-sub">Biến kênh Instagram của Kiệt thành nền tảng personal brand — người trader thật kiếm tiền từ trading, đồng thời mở ra con đường ít rủi ro hơn cho người khác thông qua cộng đồng tín hiệu.</p>
+  <div class="hero-tag">Kiet Finance — Strategy v2.1 — April 2026</div>
+  <h1>Xây thương hiệu cá nhân.<br><span>10 high-ticket sales.</span> 4 tháng.</h1>
+  <p class="hero-sub">Tốc độ cao. Sales test từ tháng 2. Mọi quyết định content đều phục vụ một mục tiêu duy nhất: đưa đúng người vào đúng cuộc trò chuyện với Kiệt.</p>
   <div class="hero-meta">
-    <div class="hero-meta-item">
-      <strong>Kiệt Finance</strong>
-      Khách hàng
-    </div>
-    <div class="hero-meta-item">
-      <strong>16 tuần · 4 tháng</strong>
-      Thời gian thực hiện
-    </div>
-    <div class="hero-meta-item">
-      <strong>Thị trường quốc tế</strong>
-      Đối tượng kênh IG
-    </div>
-    <div class="hero-meta-item">
-      <strong>Cộng đồng tín hiệu</strong>
-      Mục tiêu cuối cùng
-    </div>
+    <div class="hero-meta-item"><div class="label">Mục tiêu</div><div class="val gold">10 coaching sales</div></div>
+    <div class="hero-meta-item"><div class="label">Sales test bắt đầu</div><div class="val red">Tháng 2</div></div>
+    <div class="hero-meta-item"><div class="label">Tần suất</div><div class="val teal">3–4 posts/ngày</div></div>
+    <div class="hero-meta-item"><div class="label">Phiên bản</div><div class="val">v2.1 — Cập nhật</div></div>
   </div>
 </section>
 
-<!-- PHASE OVERVIEW -->
-<section style="padding: 0 24px 48px; max-width: 1100px; margin: 0 auto;">
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-    <div style="background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.25); border-radius:14px; padding:28px 32px;">
-      <div style="font-size:11px; letter-spacing:2px; color:#3b82f6; font-weight:700; margin-bottom:10px;">THÁNG 1 — 2</div>
-      <div style="font-size:20px; font-weight:700; color:var(--text); margin-bottom:8px;">Định vị lại & Bán test</div>
-      <div style="font-size:13px; color:var(--muted); line-height:1.7;">Xây dựng hình ảnh Kiệt từ đầu trên IG quốc tế. Kể câu chuyện thật, tạo viral, xây trust. Cuối giai đoạn: test bán lần đầu — đo xem thị trường phản ứng thế nào trước khi mở cộng đồng chính thức.</div>
-    </div>
-    <div style="background:rgba(245,200,66,0.06); border:1px solid rgba(245,200,66,0.25); border-radius:14px; padding:28px 32px;">
-      <div style="font-size:11px; letter-spacing:2px; color:var(--gold); font-weight:700; margin-bottom:10px;">THÁNG 3 — 4</div>
-      <div style="font-size:20px; font-weight:700; color:var(--text); margin-bottom:8px;">Nhân rộng</div>
-      <div style="font-size:13px; color:var(--muted); line-height:1.7;">Mở cộng đồng tín hiệu chính thức. Dùng bằng chứng thật từ đợt 1 để mở đợt 2 lớn hơn. Kích hoạt affiliate: người tham gia xây kênh riêng, bán slot vào cộng đồng Kiệt, nhận 80% hoa hồng.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ROLE MODEL -->
-<section class="section" id="rolemodel">
-  <div class="section-tag">Nền tảng nghiên cứu</div>
-  <h2 class="section-title">Role Model — <span>@nq.rich</span></h2>
-
-  <div class="accent-block">
-    <p>Toàn bộ kế hoạch này được xây dựng dựa trên phân tích thực tế @nq.rich — NQ/NASDAQ trader người Mỹ gốc Á có 57 posts được scrape, top 5 Reels được transcribe bằng Whisper, và Reel viral nhất được extract frame-by-frame. Không phải cảm tính — là data.</p>
-  </div>
-
-  <div class="grid-3" style="margin-bottom:32px;">
-    <div class="card">
-      <div class="card-title" style="color:var(--teal);">Profile</div>
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 0;color:var(--muted);">Account</td><td style="padding:8px 0;font-weight:600;">@nq.rich</td></tr>
-        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 0;color:var(--muted);">Ngách</td><td style="padding:8px 0;">NQ/NASDAQ futures — ICT methodology</td></tr>
-        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 0;color:var(--muted);">Audience</td><td style="padding:8px 0;">International — English</td></tr>
-        <tr><td style="padding:8px 0;color:var(--muted);">Bài viral nhất</td><td style="padding:8px 0;color:var(--gold);font-weight:700;">23,574 score · 22K likes</td></tr>
-      </table>
-    </div>
-    <div class="card">
-      <div class="card-title" style="color:var(--gold);">Top content pattern</div>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
-        <div style="display:flex;justify-content:space-between;font-size:13px;"><span>Emotional montage (no voiceover)</span><span style="color:var(--gold);font-weight:700;">#1</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;"><span>Educational Reel + keyword CTA</span><span style="color:var(--blue);font-weight:700;">#2</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;"><span>Dense list Reel (drives saves)</span><span style="color:var(--teal);font-weight:700;">#3</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:13px;"><span>Live trade recap + keyword CTA</span><span style="color:#a855f7;font-weight:700;">#4</span></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title" style="color:#a855f7;">Keyword CTA multiplier</div>
-      <div style="font-size:28px;font-weight:800;color:#a855f7;margin:8px 0;">7.6×</div>
-      <div style="font-size:12px;color:var(--muted);line-height:1.6;">Comments khi có keyword CTA vs cùng content không có CTA<br/>1,693 vs 221 comments — cùng 1 bài dạy</div>
-    </div>
-  </div>
-
-  <!-- Frame-by-frame Reel #1 -->
-  <div class="card" style="margin-bottom:24px;">
-    <div class="card-title" style="color:var(--gold);">Reel #1 — "The journey of a trader" | Score: 23,574 | Không CTA, không voiceover</div>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7;">Bài viral nhất. Không dạy gì, không bán gì, không có lời thoại. Toàn bộ là text overlay trên footage thật. Caption: "The journey of a trader 💔❤️" — 5 chữ. Đây là cấu trúc thực tế được extract frame-by-frame:</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
-      <div style="background:var(--surface2);border-radius:10px;padding:14px;">
-        <div style="font-size:10px;color:var(--muted);margin-bottom:6px;letter-spacing:1px;">FRAME 1–2 · HOOK</div>
-        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Xuất hiện</div>
-        <div style="font-size:12px;color:var(--muted);line-height:1.5;">"Watch how trading changed my life..." → Ngồi trước chart → "Dropped out of high school at 17..."</div>
-      </div>
-      <div style="background:var(--surface2);border-radius:10px;padding:14px;">
-        <div style="font-size:10px;color:var(--red);margin-bottom:6px;letter-spacing:1px;">FRAME 3–9 · PAIN ESCALATION</div>
-        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Đau tăng dần</div>
-        <div style="font-size:12px;color:var(--muted);line-height:1.5;">Vô gia cư trong xe → Ngủ nhờ garage bạn → Eviction notices thật → Blown $60K prop firms → "Sofa surfing bum"</div>
-      </div>
-      <div style="background:var(--surface2);border-radius:10px;padding:14px;">
-        <div style="font-size:10px;color:var(--teal);margin-bottom:6px;letter-spacing:1px;">FRAME 10–12 · TURN</div>
-        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Bước ngoặt</div>
-        <div style="font-size:12px;color:var(--muted);line-height:1.5;">"Never folded — God called me to this journey" → First payout after 3+ years → "Started scaling quickly"</div>
-      </div>
-      <div style="background:var(--surface2);border-radius:10px;padding:14px;">
-        <div style="font-size:10px;color:var(--gold);margin-bottom:6px;letter-spacing:1px;">FRAME 13–16 · GIVE BACK</div>
-        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Kết</div>
-        <div style="font-size:12px;color:var(--muted);line-height:1.5;">Penthouse view → Launched YouTube → Nhiều payout notifications → "What God has for you no person can stop 🙏"</div>
-      </div>
-    </div>
-    <div style="margin-top:16px;padding:14px 18px;background:rgba(245,200,66,0.06);border:1px solid rgba(245,200,66,0.2);border-radius:8px;font-size:13px;color:var(--muted);">
-      <strong style="color:var(--gold);">Tại sao bài này là #1:</strong> Footage 100% thật (eviction notices, màn hình lỗ, ngủ trong xe). Pain escalation cụ thể và tăng dần. Câu kết spiritual — không phải "look how rich I am". Không CTA → 22K likes từ cảm xúc thuần túy.
-    </div>
-  </div>
-
-  <!-- Adaptation cho Kiệt -->
-  <div class="card">
-    <div class="card-title" style="color:var(--teal);">Adaptation cho Kiệt — Cùng cấu trúc, angle độc đáo hơn</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px;">
-      <div>
-        <div style="font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:12px;">NQ.RICH</div>
-        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--muted);">
-          <div>Dropped out of high school at 17</div>
-          <div>Family kicked out → homeless in car</div>
-          <div>$60K blown on prop firm evaluations</div>
-          <div>Faith moment → first payout</div>
-          <div>Penthouse, lifestyle</div>
-          <div>Teaching others via YouTube</div>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:11px;color:var(--teal);letter-spacing:1px;margin-bottom:12px;">KIỆT — ANGLE ĐỘC ĐÁO HƠN</div>
-        <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
-          <div>Lớn lên nơi tiền chỉ đủ lo cơm áo, không ai nghĩ đến đầu tư</div>
-          <div>Tự tìm ra markets — không ai xung quanh biết trading tồn tại</div>
-          <div>Thua lỗ thật [số cụ thể] trong năm đầu</div>
-          <div>Bước ngoặt [thật của Kiệt]</div>
-          <div>Profitable từ thị trường quốc tế — từ nơi không ai làm điều này</div>
-          <div>Mở con đường ít rủi ro hơn cho người khác</div>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:16px;padding:12px 16px;background:rgba(0,212,170,0.06);border:1px solid rgba(0,212,170,0.2);border-radius:8px;font-size:13px;color:var(--muted);">
-      <strong style="color:var(--teal);">Angle Kiệt có mà nq.rich không có:</strong> Trader người Việt làm chủ thị trường quốc tế — từ nơi không ai biết NQ futures tồn tại. Không có account nào trong thị trường này có angle này.
-    </div>
-  </div>
-</section>
-
-<!-- BRAND IDENTITY -->
+<!-- BRAND -->
 <section class="section" id="brand">
-  <div class="section-tag">Phần 0 — Định vị thương hiệu</div>
-  <h2 class="section-title">Kiệt là <span>ai?</span></h2>
+  <div class="section-tag">01 — Định vị thương hiệu cá nhân</div>
+  <div class="section-title">Kiệt là ai trong mắt<br><span>người sẵn sàng trả high-ticket?</span></div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:4px;font-style:italic;">High-ticket (giá cao): chỉ mức giá coaching cá nhân 1:1 — thường từ $5,000 trở lên, dành cho người mua vì kết quả, không phải vì giá rẻ.</p>
 
-  <div class="grid-2" style="margin-bottom: 32px;">
-    <div>
-      <div class="card" style="margin-bottom: 20px;">
-        <div class="card-title" style="color: var(--red);">Không phải</div>
-        <ul class="not-list">
-          <li>Guru tài chính đang dạy người khác làm giàu</li>
-          <li>Trader chuyên nghiệp với track record 10 năm</li>
-          <li>Người bán tín hiệu — thu nhập chính đến từ phí signal, không phải từ trading thật</li>
-          <li>Ai đó đã đến đích và đang nhìn xuống</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-title" style="color: var(--teal);">Thực tế</div>
-        <ul class="is-list">
-          <li>Trader thật — kiếm tiền từ thị trường bằng kỹ năng của chính mình</li>
-          <li>Đang trên hành trình — đã đi xa hơn hầu hết, chưa đến đích cuối</li>
-          <li>Kể lại hành trình theo thời gian thực, không tô hồng</li>
-          <li>Người đi trước một đoạn, không phải thầy dạy — số tiền Kiệt kiếm được là bằng chứng sống</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="card" style="height: 100%;">
-        <div class="card-title" style="color: var(--gold);">Nhân vật thương hiệu — "Người tiên phong dễ đồng cảm"</div>
-        <table style="width:100%; border-collapse:collapse; font-size:14px;">
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding:10px 0; color:var(--muted); width:45%;">Xuất phát điểm</td>
-            <td style="padding:10px 0;">Bình thường — không vốn, không network, không lợi thế đặc biệt</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding:10px 0; color:var(--muted);">Điểm khác biệt</td>
-            <td style="padding:10px 0;">Dám chọn con đường không ai xung quanh đi</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding:10px 0; color:var(--muted);">Vị trí hiện tại</td>
-            <td style="padding:10px 0;">Đang trên hành trình — đã đi xa, chưa đến đích</td>
-          </tr>
-          <tr>
-            <td style="padding:10px 0; color:var(--muted);">Giá trị cốt lõi</td>
-            <td style="padding:10px 0;">Thật hơn kết quả đẹp. Hành trình thật hơn highlight reel.</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <div class="accent-block">
-    <p>"A self-taught trader from a place where money was only for survival — who figured out how financial markets actually work, and built a second path for people who want in, without going through what he went through."<br/><span style="font-size:13px; opacity:.6;">→ "Một trader tự học từ nơi tiền chỉ là thứ để lo cơm áo, không phải để đầu tư — tìm ra cách thị trường tài chính thực sự vận hành, và xây một con đường thứ hai cho những ai muốn tham gia, mà không cần trải qua những gì anh ấy đã trải qua."</span></p>
-  </div>
-
-  <div class="grid-3">
-    <div class="card">
-      <div class="card-title" style="color: var(--muted);">Chương 1 — Tháng 1</div>
-      <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Rời đi</div>
-      <div style="font-size:13px; color:var(--muted);">Tôi từ chối con đường mà mọi người kỳ vọng. Kênh xuất hiện, Kiệt xuất hiện — không giải thích nhiều.</div>
-    </div>
-    <div class="card">
-      <div class="card-title" style="color: var(--muted);">Chương 2 — Tháng 1–2</div>
-      <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Tìm đường</div>
-      <div style="font-size:13px; color:var(--muted);">Tôi thất bại, thua lỗ, học lại. Câu chuyện thật tạo ra niềm tin thật — không có shortcut nào cho bước này.</div>
-    </div>
-    <div class="card">
-      <div class="card-title" style="color: var(--muted);">Chương 3 — Tháng 3–4</div>
-      <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Xây hệ thống</div>
-      <div style="font-size:13px; color:var(--muted);">Tôi mở cộng đồng — không phải để kiếm tiền từ nó, mà vì hiểu rằng không phải ai cũng cần đi con đường trading gian khổ như mình.</div>
-    </div>
-  </div>
-</section>
-
-<!-- TWO PATHS -->
-<section class="section" id="paths">
-  <div class="section-tag">Phần 0 — Chiến lược cốt lõi</div>
-  <h2 class="section-title">Hai con đường, <span>một thị trường</span></h2>
-
-  <div class="accent-block">
-    <p>"Thị trường tài chính là nơi tiền đang chảy nhiều nhất thế giới lúc này. Tôi chọn vào bằng trading — mất nhiều năm và nhiều tiền để học. Nhưng không phải ai cũng cần đi con đường gian khổ đó để tham gia vào cùng thị trường này."</p>
-  </div>
-
-  <div class="paths-grid">
-    <div class="path-card trading">
-      <div class="path-label">Con đường 1 — Hành trình của Kiệt</div>
-      <div class="path-title">Trading</div>
-      <ul class="req-list">
-        <li><span class="dot">▸</span> Cần kỹ năng phân tích thị trường sâu</li>
-        <li><span class="dot">▸</span> Cần vốn cá nhân chấp nhận rủi ro</li>
-        <li><span class="dot">▸</span> Mất nhiều năm học và luyện tập</li>
-        <li><span class="dot">▸</span> Phải chịu được thua lỗ trước khi có lợi nhuận</li>
-      </ul>
-      <div style="font-size:13px; color:var(--muted); padding: 14px; background: rgba(0,0,0,0.2); border-radius:8px; margin-top:8px;">
-        Đây là con đường Kiệt đã và đang đi. Phần lớn người bắt đầu đều thua trước khi thắng. Uy tín của Kiệt đến từ kết quả thật trên thị trường — không phải từ số followers.
-      </div>
-    </div>
-
-    <div class="path-divider">
-      <div class="path-divider-line"></div>
-      <div class="path-divider-label">Thị trường tài chính</div>
-      <div class="path-divider-line"></div>
-    </div>
-
-    <div class="path-card ib">
-      <div class="path-label">Con đường 2 — Kiệt mở cho người khác</div>
-      <div class="path-title">Affiliate — Bán slot cộng đồng tín hiệu</div>
-      <ul class="req-list">
-        <li><span class="dot" style="color:var(--teal);">▸</span> Xây kênh cá nhân → thu hút người quan tâm tài chính</li>
-        <li><span class="dot" style="color:var(--teal);">▸</span> Bán slot vào cộng đồng tín hiệu của Kiệt</li>
-        <li><span class="dot" style="color:var(--teal);">▸</span> Nhận <strong style="color:var(--gold);">80% hoa hồng</strong> trên mỗi slot bán được</li>
-      </ul>
-      <ul class="req-list no" style="margin-top:4px;">
-        <li><span class="dot">✕</span> Rủi ro thấp hơn — không đặt vốn vào thị trường</li>
-        <li><span class="dot">✕</span> Không bắt buộc biết phân tích để bắt đầu — càng hiểu càng bán được nhiều hơn</li>
-        <li><span class="dot">✕</span> Không cần ngồi nhìn chart — thu nhập đến từ kênh, không phải từ lệnh</li>
-      </ul>
-      <div style="font-size:13px; color:var(--muted); padding: 14px; background: rgba(0,0,0,0.2); border-radius:8px; margin-top:8px;">
-        Dành cho người muốn tham gia thị trường tài chính theo cách <strong style="color:var(--text);">không có rủi ro vốn</strong>. Xây kênh, giới thiệu người vào cộng đồng Kiệt, hưởng 80% hoa hồng — thu nhập đến từ việc kết nối người đúng với cơ hội đúng.
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top: 32px;">
-    <div class="card">
-      <div class="card-title" style="color: var(--gold);">Định vị so với thị trường</div>
-      <table style="width:100%; border-collapse:collapse; font-size:14px; margin-top:8px;">
-        <thead>
-          <tr>
-            <th style="text-align:left; padding:10px 12px; color:var(--muted); font-size:11px; letter-spacing:1px; border-bottom:1px solid var(--border);"></th>
-            <th style="text-align:left; padding:10px 12px; color:var(--gold); font-size:11px; letter-spacing:1px; border-bottom:1px solid var(--border);">KIỆT</th>
-            <th style="text-align:left; padding:10px 12px; color:var(--muted); font-size:11px; letter-spacing:1px; border-bottom:1px solid var(--border);">Signal Seller</th>
-            <th style="text-align:left; padding:10px 12px; color:var(--muted); font-size:11px; letter-spacing:1px; border-bottom:1px solid var(--border);">Guru Khóa Học</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px; color:var(--muted);">Nguồn thu chính</td>
-            <td style="padding:12px; font-weight:600;">Trading thật — thu nhập chính từ thị trường · Cộng đồng là con đường thứ hai Kiệt mở cho người khác</td>
-            <td style="padding:12px; color:var(--muted);">Phí tín hiệu mà không có trading thật</td>
-            <td style="padding:12px; color:var(--muted);">Bán khóa học</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px; color:var(--muted);">Cộng đồng là gì</td>
-            <td style="padding:12px; font-weight:600;">Affiliates xây kênh bán slot vào cộng đồng nhận tín hiệu của Kiệt — hưởng 80% hoa hồng</td>
-            <td style="padding:12px; color:var(--muted);">Sản phẩm duy nhất</td>
-            <td style="padding:12px; color:var(--muted);">Upsell</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px; color:var(--muted);">Credibility đến từ</td>
-            <td style="padding:12px; font-weight:600; color:var(--teal);">Kết quả trading thật của Kiệt — không phải followers</td>
-            <td style="padding:12px; color:var(--muted);">Followers / số lượng</td>
-            <td style="padding:12px; color:var(--muted);">Testimonials</td>
-          </tr>
-          <tr>
-            <td style="padding:12px; color:var(--muted);">Điểm khác biệt</td>
-            <td style="padding:12px; font-weight:600; color:var(--gold);">Tín hiệu có nguồn gốc từ trader thật — kênh IG là bằng chứng sống</td>
-            <td style="padding:12px; color:var(--muted);">—</td>
-            <td style="padding:12px; color:var(--muted);">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- BRAND VOICE -->
-<section class="section">
-  <div class="section-tag">Phần 0 — Giọng nói</div>
-  <h2 class="section-title">Brand Voice & <span>Positioning</span></h2>
-
-  <div class="voice-grid">
-    <div class="voice-card is-card">
-      <div class="voice-card-title">✓ Là</div>
-      <ul class="is-list">
-        <li>Thẳng thắn, không filter</li>
-        <li>Kể thất bại thật, có số liệu</li>
-        <li>Flex dưới dạng hành trình — chia sẻ cả thành công lẫn thất bại theo thời gian thực</li>
-        <li>Như người đi cùng hành trình</li>
-        <li>Đơn giản, Gen Z, không thuật ngữ phức tạp</li>
-      </ul>
-    </div>
-    <div class="voice-card not-card">
-      <div class="voice-card-title">✕ Không phải</div>
-      <ul class="not-list">
-        <li>Hoa mỹ, bóng bẩy</li>
-        <li>Giấu đi hoặc romanticize thất bại</li>
-        <li>"Look how rich I am"</li>
-        <li>Như thầy dạy học trò</li>
-        <li>Thuật ngữ tài chính phức tạp</li>
-      </ul>
-    </div>
+  <div class="brand-core">
+    <div class="brand-statement">"Trader tự học từ con số không, không có người hướng dẫn, không có mạng lưới, không có vốn — đã xây dựng được thu nhập ổn định từ thị trường tài chính quốc tế ở tuổi 19. Bây giờ anh ấy dạy con đường rút ngắn mà anh ấy đã không có."</div>
+    <div class="brand-sub">Người mua high-ticket không mua kiến thức — họ mua con đường đã được chứng minh và người dẫn đường đáng tin. Kiệt phải là cả hai.</div>
   </div>
 
   <div class="grid-2">
     <div class="card">
-      <div class="card-title" style="color:var(--teal);">Sẽ nói</div>
-      <ul class="say-list">
-        <li>I don't know if this works for everyone. Here's what worked for me.<br/><span style="font-size:12px; opacity:.6;">→ "Tôi không biết cái này có hiệu quả với tất cả mọi người không. Đây là điều đã hiệu quả với tôi."</span></li>
-        <li>I was wrong about this. Here's what I learned.<br/><span style="font-size:12px; opacity:.6;">→ "Tôi đã sai về điều này. Đây là điều tôi học được."</span></li>
-        <li>This is what month 3 actually looked like — not the highlight reel.<br/><span style="font-size:12px; opacity:.6;">→ "Đây là tháng thứ 3 thực sự trông như thế nào — không phải bản highlight."</span></li>
+      <div class="card-label">Định vị đúng cho khách hàng high-ticket</div>
+      <ul class="check-list">
+        <li>Trader đang kiếm thu nhập thật từ thị trường tài chính quốc tế — không phải người nói về lý thuyết</li>
+        <li>Đã trải qua đủ thất bại — vì vậy biết chính xác cái gì không hoạt động, không chỉ cái gì hoạt động</li>
+        <li>19 tuổi, không bằng cấp tài chính — chứng minh xuất phát điểm không quyết định kết quả</li>
+        <li>Coaching 1:1 dành cho người nghiêm túc — không phải cộng đồng đại trà, không phải khóa học số</li>
+        <li>Kết quả đo được: thu nhập hàng tháng ổn định, tự do về thời gian, không phụ thuộc vị trí địa lý</li>
+        <li>Kiến thức & kinh nghiệm thực chiến: không dạy lý thuyết — chỉ dạy những gì đã thực sự làm được trong thị trường thực, với tiền thật, rủi ro thật</li>
+        <li>Quản lý rủi ro (Risk Management): có những lệnh thua — nhưng biên lợi nhuận luôn lớn hơn thua lỗ đáng kể. Đây là hệ thống, không phải may mắn</li>
+        <li>Tự do thực sự: tự do chọn giờ làm, tự do chọn nơi sống, tự do không phụ thuộc vào bất kỳ ai hay tổ chức nào — đây là lý do sâu xa nhất để chọn con đường này</li>
       </ul>
     </div>
     <div class="card">
-      <div class="card-title" style="color:var(--red);">Không bao giờ nói</div>
-      <ul class="say-list">
-        <li>I never lose. I've been profitable every single month.<br/><span style="font-size:12px; opacity:.6;">→ "Tôi chưa bao giờ thua. Tháng nào tôi cũng có lời."</span></li>
-        <li>Just trust me and follow what I do — I've figured it all out.<br/><span style="font-size:12px; opacity:.6;">→ "Cứ tin tôi và làm theo — tôi đã tìm ra tất cả rồi."</span></li>
-        <li>Trading is easy once you have the right teacher.<br/><span style="font-size:12px; opacity:.6;">→ "Trading dễ lắm, chỉ cần có người hướng dẫn đúng là xong."</span></li>
+      <div class="card-label">Thông điệp PHẢI tránh — đẩy đi khách hàng sai</div>
+      <ul class="x-list">
+        <li>"Bạn không cần nhiều vốn để bắt đầu" — thu hút người không có tiền trả coaching</li>
+        <li>"Ai cũng có thể làm được điều này" — làm loãng giá trị, không lọc được đúng người</li>
+        <li>"Chỉ cần vài giờ mỗi ngày" — nghe như quảng cáo thu nhập thụ động, không có thật</li>
+        <li>Khoe xe sang, đồng hồ đắt tiền — thu hút người muốn hình ảnh, không phải người muốn học</li>
+        <li>So sánh với người làm công ăn lương thấp — target sai nhóm, không phải khách hàng high-ticket</li>
       </ul>
     </div>
   </div>
 
-</section>
-
-<!-- 4 PILLARS -->
-<section class="section" id="pillars">
-  <div class="section-tag">Phần 1 — Tổng quan chiến lược</div>
-  <h2 class="section-title">4 Content Pillars — <span>Song song từ ngày đầu</span></h2>
-
-  <p style="color:var(--muted); margin-bottom:32px; max-width:680px;">Không có giai đoạn "chỉ viral" hay "chỉ bán hàng". Bốn tuyến chạy đồng thời từ ngày đầu — mỗi tuyến phục vụ một nhóm khán giả ở bậc nhận thức khác nhau.</p>
-
-  <div class="grid-4" style="margin-bottom:40px;">
-    <div class="pillar-card p1">
-      <div class="pillar-num">Pillar 1</div>
-      <div class="pillar-title">Viral / Reach</div>
-      <div class="pillar-ratio">45%</div>
-      <div class="pillar-ratio-sub">→ 20% tháng 4</div>
-      <div class="pillar-detail">
-        <strong>Format:</strong> Reels dưới 60s<br/>
-        <strong>Mục đích:</strong> Kéo người lạ về kênh<br/>
-        <strong>Đưa từ:</strong> Unaware → "Người này thú vị"
-      </div>
+  <div class="pos3">
+    <div class="pos-box">
+      <div class="pos-label gold">Nhân vật cốt lõi</div>
+      <p><strong>"Con đường rút ngắn đã được chứng minh"</strong> — Kiệt đã đi con đường dài và tốn kém. Người mua coaching đang mua bản đồ để không phải lặp lại những sai lầm đó. Không mua hy vọng — mua hệ thống đã thực sự hoạt động.</p>
     </div>
-    <div class="pillar-card p2">
-      <div class="pillar-num">Pillar 2</div>
-      <div class="pillar-title">Authority / Story</div>
-      <div class="pillar-ratio">35%</div>
-      <div class="pillar-ratio-sub">→ 15% tháng 4</div>
-      <div class="pillar-detail">
-        <strong>Format:</strong> Story Carousel 7–10 slides<br/>
-        <strong>Mục đích:</strong> Xây niềm tin cá nhân<br/>
-        <strong>Đưa từ:</strong> "Thú vị" → "Mình tin người này"
-      </div>
+    <div class="pos-box">
+      <div class="pos-label teal">Góc độ độc nhất — không ai trong thị trường này có</div>
+      <p><strong>Xuất phát từ điều kiện thấp nhất, chơi ở thị trường quốc tế.</strong> Học và kiếm tiền từ thị trường tài chính toàn cầu mà không có người hướng dẫn, không có mạng lưới, không có nền tảng tài chính. Đây là góc độ không ai trong ngách này có thể copy được.</p>
     </div>
-    <div class="pillar-card p3">
-      <div class="pillar-num">Pillar 3</div>
-      <div class="pillar-title">Education / Model</div>
-      <div class="pillar-ratio">10%</div>
-      <div class="pillar-ratio-sub">→ 25% tháng 4</div>
-      <div class="pillar-detail">
-        <strong>Format:</strong> Belief Carousel 6–8 slides<br/>
-        <strong>Mục đích:</strong> Dạy khán giả hiểu cơ hội<br/>
-        <strong>Đưa từ:</strong> "Tin" → "Đây là thứ mình tìm"
-      </div>
-    </div>
-    <div class="pillar-card p4">
-      <div class="pillar-num">Pillar 4</div>
-      <div class="pillar-title">Proof / Community</div>
-      <div class="pillar-ratio">10%</div>
-      <div class="pillar-ratio-sub">→ 40% tháng 4</div>
-      <div class="pillar-detail">
-        <strong>Format:</strong> Daily Stories + Reels proof (T3+)<br/>
-        <strong>Mục đích:</strong> Xóa nghi ngờ, trigger hành động<br/>
-        <strong>Đưa từ:</strong> "Tìm thấy" → JOIN
-      </div>
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <div class="card">
-      <div class="card-title" style="color:var(--gold);">Hành trình khán giả</div>
-      <div class="journey" style="margin-top:20px; flex-direction:column; gap:0;">
-        <div style="display:flex; align-items:center; gap:16px; padding:12px 0; border-bottom:1px solid var(--border);">
-          <div style="width:36px; height:36px; border-radius:50%; background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;">👤</div>
-          <div>
-            <div style="font-size:13px; font-weight:600;">Người lạ hoàn toàn</div>
-            <div style="font-size:12px; color:var(--muted);">Chưa biết Kiệt là ai</div>
-          </div>
-          <div style="margin-left:auto;"><span class="pillar-tag pt-viral">Viral</span></div>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px; padding:12px 0; border-bottom:1px solid var(--border);">
-          <div style="width:36px; height:36px; border-radius:50%; background:rgba(245,200,66,0.1); border:1px solid rgba(245,200,66,0.2); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;">👀</div>
-          <div>
-            <div style="font-size:13px; font-weight:600;">"Người này thú vị"</div>
-            <div style="font-size:12px; color:var(--muted);">Bắt đầu follow</div>
-          </div>
-          <div style="margin-left:auto;"><span class="pillar-tag pt-authority">Authority</span></div>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px; padding:12px 0; border-bottom:1px solid var(--border);">
-          <div style="width:36px; height:36px; border-radius:50%; background:rgba(0,212,170,0.1); border:1px solid rgba(0,212,170,0.2); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;">💡</div>
-          <div>
-            <div style="font-size:13px; font-weight:600;">"Mình tin người này"</div>
-            <div style="font-size:12px; color:var(--muted);">Engagement tăng</div>
-          </div>
-          <div style="margin-left:auto;"><span class="pillar-tag pt-education">Education</span></div>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px; padding:12px 0; border-bottom:1px solid var(--border);">
-          <div style="width:36px; height:36px; border-radius:50%; background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.2); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;">🎯</div>
-          <div>
-            <div style="font-size:13px; font-weight:600;">"Đây là thứ mình đang tìm"</div>
-            <div style="font-size:12px; color:var(--muted);">DMs bắt đầu đến</div>
-          </div>
-          <div style="margin-left:auto;"><span class="pillar-tag pt-proof">Proof</span></div>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px; padding:12px 0;">
-          <div style="width:36px; height:36px; border-radius:50%; background:rgba(245,200,66,0.2); border:1px solid rgba(245,200,66,0.4); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;">✅</div>
-          <div>
-            <div style="font-size:13px; font-weight:700; color:var(--gold);">Tham gia cộng đồng — con đường ít rủi ro hơn</div>
-            <div style="font-size:12px; color:var(--muted);">Nhận tín hiệu thật từ Kiệt · Xây kênh bán slot · Hoa hồng 80%</div>
-          </div>
-        </div>
-      </div>
+    <div class="pos-box">
+      <div class="pos-label red">Kết quả người mua thực sự muốn</div>
+      <p><strong>Cụ thể và đo được:</strong> Thu nhập ổn định hàng tháng từ thị trường tài chính. Không cần ngồi nhìn biểu đồ 8 tiếng mỗi ngày. Hiểu thị trường đủ để tự ra quyết định — không phụ thuộc vào tín hiệu của người khác.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTENT RATIO BY MONTH -->
-<section class="section" id="ratio">
-  <div class="section-tag">Phần 1 — Phân bổ nội dung</div>
-  <h2 class="section-title">Tỷ lệ content <span>theo tháng</span></h2>
+<!-- AVATAR -->
+<section class="section" id="avatar">
+  <div class="section-tag">02 — Chân dung khách hàng high-ticket</div>
+  <div class="section-title">Ai sẵn sàng trả <span>$5,000 cho coaching của Kiệt?</span></div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:32px;">Không phải ai cũng là khách hàng đúng. Hiểu rõ từng nhóm — nỗi đau thật, mong muốn thật, lý do họ trì hoãn — giúp Kiệt tạo đúng nội dung thu đúng người, và chốt đúng cách khi gặp đúng người.</p>
 
-  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:8px;">
-
-    <!-- THÁNG 1 -->
-    <div style="background:var(--card); border:1px solid var(--border); border-radius:14px; padding:24px; display:flex; flex-direction:column; gap:16px;">
-      <div style="font-size:11px; letter-spacing:2px; color:#3b82f6; font-weight:700;">THÁNG 1</div>
-      <div style="font-size:15px; font-weight:700; color:var(--text);">Học đăng — Xây nền</div>
-
+  <!-- AVATAR 1 -->
+  <div class="angle-block ab-3" style="margin-bottom:24px;">
+    <div class="angle-header">
       <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">LOẠI BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Reels</span><span style="color:#3b82f6; font-weight:600;">50%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Carousel</span><span style="color:#3b82f6; font-weight:600;">40%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Stories</span><span style="color:var(--muted); font-weight:600;">10%</span></div>
+        <div class="angle-num">Nhóm 01</div>
+        <div class="angle-name">Chủ doanh nghiệp / Freelancer thu nhập cao</div>
+      </div>
+      <div class="angle-badge badge-gold">Ưu tiên cao — sẵn sàng trả nhất</div>
+    </div>
+    <div class="angle-body">
+      <div class="angle-desc">Đang kiếm trên $10,000/tháng từ business hoặc freelance. Thu nhập tốt — nhưng phụ thuộc hoàn toàn vào khách hàng và hợp đồng. Họ hiểu giá trị tiền, quen tư duy đầu tư vào bản thân, và đang chủ động tìm cách đa dạng hóa nguồn thu.</div>
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Nỗi đau thật</div>
+          <p>• Thu nhập tốt nhưng <strong>không bao giờ hoàn toàn thụ động</strong> — nếu họ dừng làm, tiền dừng chảy<br>• Bị giới hạn bởi số giờ trong ngày và số khách có thể phục vụ<br>• Cảm giác burnout ngầm — làm nhiều, kiếm nhiều, nhưng không có cảm giác tự do thực sự<br>• Lo lắng về sự phụ thuộc: một khách hàng lớn rời đi là cả mảng thu nhập lung lay</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Mong muốn thật</div>
+          <p>• Nguồn thu <strong>không cần sự hiện diện liên tục</strong> — thị trường chạy dù họ đang ngủ hay đi du lịch<br>• Không phụ thuộc vào bất kỳ khách hàng, hợp đồng hay nền tảng nào<br>• Cảm giác "tiền của mình thật sự thuộc về mình" — không ai có thể lấy đi bằng cách hủy hợp đồng<br>• Thêm một "cỗ máy thu nhập" bên cạnh business chính</p>
         </div>
       </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">MỤC ĐÍCH BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Viral + Câu chuyện</span><span style="color:var(--teal); font-weight:600;">100%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Bán hàng</span><span style="color:var(--muted); font-weight:600;">0%</span></div>
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Họ nói — họ thực sự muốn</div>
+          <p><em>"Muốn đa dạng hóa thu nhập"</em> → Thực ra: <strong>muốn thoát khỏi sự phụ thuộc vào khách hàng</strong><br><br><em>"Muốn đầu tư thụ động"</em> → Thực ra: <strong>muốn có hệ thống tự vận hành không cần quản lý liên tục</strong></p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Lý do trì hoãn hay gặp</div>
+          <p>• <em>"Tôi bận quá, không có thời gian học thêm"</em> — thực ra sợ đầu tư thêm thời gian vào thứ chưa chắc chắn<br>• <em>"Tôi đã có thu nhập tốt rồi"</em> — chưa cảm thấy đủ đau<br>• Sợ mất tập trung khỏi business chính</p>
         </div>
       </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">ƯU TIÊN</div>
-        <div style="font-size:12px; color:var(--muted); line-height:1.6;">90% bài có hình ảnh/video Kiệt xuất hiện trực tiếp. Chưa dùng tool bên ngoài — tập trung học format và tối ưu thuật toán.</div>
+      <div class="angle-box" style="margin-top:14px;">
+        <div class="angle-box-label">Trigger mua hàng — khi nào họ hành động</div>
+        <p>Khi một hợp đồng lớn đột ngột kết thúc. Khi cảm giác burnout lên đỉnh điểm. Khi thấy người quen kiếm tiền từ thị trường trong khi mình vẫn đổi giờ lấy tiền. Khi họ tính ra: "$5,000 coaching = chi phí 2 tuần không có khách hàng."</p>
       </div>
     </div>
+  </div>
 
-    <!-- THÁNG 2 -->
-    <div style="background:var(--card); border:1px solid var(--border); border-radius:14px; padding:24px; display:flex; flex-direction:column; gap:16px;">
-      <div style="font-size:11px; letter-spacing:2px; color:#a855f7; font-weight:700;">THÁNG 2</div>
-      <div style="font-size:15px; font-weight:700; color:var(--text);">Xây trust — Bán test</div>
-
+  <!-- AVATAR 2 -->
+  <div class="angle-block ab-2" style="margin-bottom:24px;">
+    <div class="angle-header">
       <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">LOẠI BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Reels</span><span style="color:#a855f7; font-weight:600;">40%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Carousel</span><span style="color:#a855f7; font-weight:600;">35%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Stories</span><span style="color:#a855f7; font-weight:600;">25%</span></div>
+        <div class="angle-num">Nhóm 02</div>
+        <div class="angle-name">Người đã trade nhưng chưa có kết quả ổn định</div>
+      </div>
+      <div class="angle-badge badge-teal">Đau nhất — quyết tâm nhất</div>
+    </div>
+    <div class="angle-body">
+      <div class="angle-desc">Đã tự học 6–24 tháng. Đã mua khóa học, xem YouTube, thử nhiều hệ thống. Có kiến thức lý thuyết nhưng đường vốn vẫn đi xuống. Hiểu đủ để biết mình đang thiếu gì — nhưng không biết chính xác sai ở đâu. Đây là nhóm có động lực mua mạnh nhất.</div>
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Nỗi đau thật</div>
+          <p>• Đã <strong>đầu tư thời gian và tiền bạc</strong> nhưng không có kết quả — cảm giác mình "không có tài" cho trading<br>• Xấu hổ khi phải thú nhận với gia đình rằng vẫn chưa có lãi sau bao lâu<br>• Vòng lặp không lối thoát: học thêm → thử → thất bại → học thêm<br>• Sợ mình sẽ mãi là người "gần đến nơi nhưng không bao giờ tới"</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Mong muốn thật</div>
+          <p>• Có người nhìn thẳng vào giao dịch của họ và <strong>chỉ ra chính xác vấn đề cốt lõi</strong> — không phải kiến thức chung<br>• Break even trước, rồi có lãi ổn định — không cần giàu nhanh, chỉ cần <strong>chứng minh được với bản thân</strong> rằng mình làm được<br>• Thoát khỏi cảm giác cô đơn trong hành trình</p>
         </div>
       </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">MỤC ĐÍCH BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Viral + Câu chuyện</span><span style="color:var(--teal); font-weight:600;">80%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Bán test (nhẹ)</span><span style="color:#a855f7; font-weight:600;">20%</span></div>
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Họ nói — họ thực sự muốn</div>
+          <p><em>"Tôi cần thêm kiến thức"</em> → Thực ra: <strong>cần ai đó xác nhận mình đang sai ở đâu</strong><br><br><em>"Tôi muốn tìm hệ thống phù hợp hơn"</em> → Thực ra: <strong>muốn ai đó nói thẳng tại sao hệ thống hiện tại của họ không hoạt động</strong></p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Lý do trì hoãn hay gặp</div>
+          <p>• <em>"Tôi đã tốn nhiều tiền cho khóa học rồi"</em> — sợ bị thất vọng thêm lần nữa<br>• <em>"Cần học thêm trước"</em> — analysis paralysis, thực ra sợ thử và sai<br>• Nghi ngờ: "Coaching này có khác khóa học kia không?"</p>
         </div>
       </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">TOOLS</div>
-        <div style="display:flex; flex-direction:column; gap:4px; font-size:12px; color:var(--muted); line-height:1.6;">
-          <span>· ManyChat — auto-reply Stories</span>
-          <span>· Landing page cơ bản</span>
-          <span>· Stories polls để đo phản ứng</span>
-        </div>
+      <div class="angle-box" style="margin-top:14px;">
+        <div class="angle-box-label">Trigger mua hàng — khi nào họ hành động</div>
+        <p>Sau một lệnh thua lớn làm mất phần lớn vốn. Khi thấy người khác — xuất phát điểm tương tự — đã có kết quả. Khi gần bỏ cuộc nhưng chưa dám thừa nhận. Khi tìm thấy Kiệt và thấy câu chuyện quá giống mình.</p>
       </div>
     </div>
+  </div>
 
-    <!-- THÁNG 3 -->
-    <div style="background:var(--card); border:1px solid rgba(245,200,66,0.2); border-radius:14px; padding:24px; display:flex; flex-direction:column; gap:16px;">
-      <div style="font-size:11px; letter-spacing:2px; color:var(--gold); font-weight:700;">THÁNG 3</div>
-      <div style="font-size:15px; font-weight:700; color:var(--text);">Mở cộng đồng — Chốt sales</div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">LOẠI BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Reels</span><span style="color:var(--gold); font-weight:600;">35%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Carousel</span><span style="color:var(--gold); font-weight:600;">25%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Stories</span><span style="color:var(--gold); font-weight:600;">40%</span></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">MỤC ĐÍCH BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Viral + Câu chuyện</span><span style="color:var(--teal); font-weight:600;">50%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Bán hàng + Proof</span><span style="color:var(--gold); font-weight:600;">50%</span></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">TOOLS</div>
-        <div style="display:flex; flex-direction:column; gap:4px; font-size:12px; color:var(--muted); line-height:1.6;">
-          <span>· ManyChat — full funnel DM</span>
-          <span>· Landing page đầy đủ</span>
-          <span>· Stories closing sequence</span>
-          <span>· Carousel bán hàng trực tiếp</span>
-          <span>· <strong style="color:var(--text);">Test content quay trực tiếp</strong> — Kiệt xuất hiện thật, có thể hỗ trợ AI</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- THÁNG 4 -->
-    <div style="background:var(--card); border:1px solid rgba(0,212,170,0.2); border-radius:14px; padding:24px; display:flex; flex-direction:column; gap:16px;">
-      <div style="font-size:11px; letter-spacing:2px; color:var(--teal); font-weight:700;">THÁNG 4</div>
-      <div style="font-size:15px; font-weight:700; color:var(--text);">Nhân rộng — Affiliate</div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">LOẠI BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Reels</span><span style="color:var(--teal); font-weight:600;">30%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Carousel</span><span style="color:var(--teal); font-weight:600;">25%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Stories</span><span style="color:var(--teal); font-weight:600;">45%</span></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">MỤC ĐÍCH BÀI</div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Viral + Câu chuyện</span><span style="color:var(--teal); font-weight:600;">40%</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13px;"><span>Bán hàng + Proof</span><span style="color:var(--gold); font-weight:600;">60%</span></div>
-        </div>
-      </div>
-
-      <div>
-        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:1px;">TOOLS</div>
-        <div style="display:flex; flex-direction:column; gap:4px; font-size:12px; color:var(--muted); line-height:1.6;">
-          <span>· ManyChat — affiliate onboard</span>
-          <span>· Affiliate tracking link</span>
-          <span>· Stories proof + closing</span>
-          <span>· Carousel inside community</span>
-          <span>· <strong style="color:var(--text);">Đẩy mạnh content quay trực tiếp</strong> — kết hợp AI để tối ưu chất lượng và tốc độ sản xuất</span>
-        </div>
-      </div>
-    </div>
-
+  <!-- ĐIỂM CHUNG -->
+  <div class="verdict-block">
+    <div class="verdict-label">Điểm chung của cả 2 nhóm — tại sao họ chọn Kiệt</div>
+    <div class="verdict-text">Họ không mua kiến thức. Họ mua con đường đã được chứng minh và người dẫn đường đã thực sự đi qua nó.</div>
+    <div class="verdict-sub">Đều đã có thu nhập hoặc tiết kiệm — không phải người đang cần tiền gấp. Nghiêm túc với kết quả, sẵn sàng đầu tư vào bản thân. Không tìm cách làm giàu nhanh — tìm hệ thống thật và người họ có thể tin tưởng. Câu chuyện của Kiệt — xuất phát từ con số không, không mentor, không mạng lưới — là bằng chứng sống rằng không cần điều kiện lý tưởng để có kết quả.</div>
   </div>
 </section>
 
-<!-- MONTH 1 -->
-<section class="section" id="month1">
-  <div class="section-tag">Phần 2 — Kế hoạch chi tiết</div>
-  <h2 class="section-title">Tháng 1 — <span>Xây nền</span></h2>
+<!-- STORY ARC -->
+<section class="section" id="story">
+  <div class="section-tag">03 — Hành trình thật của Kiệt</div>
+  <div class="section-title">Phần nào kể —<span> phần nào nhấn mạnh</span></div>
 
-  <div class="month-goal">
-    <strong>Mục tiêu tháng:</strong> Thuật toán nhận diện kênh là healthy. Khán giả biết Kiệt là ai, tại sao nên follow, và cảm nhận được đây là người thật — không phải brand vô danh. Chưa đề cập đến cộng đồng.
-  </div>
+  <div style="background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.25);border-radius:var(--radius);padding:14px 22px;font-size:13px;color:#c084fc;margin-bottom:16px;"><strong>Lưu ý định vị tuổi tác:</strong> Có thể nhắc đến độ tuổi bắt đầu hành trình (17–19 tuổi) như một điểm nhấn về sự dũng cảm và xuất phát điểm. Tuy nhiên, tránh nhắc nhiều đến tuổi hiện tại — sẽ thu hút sai đối tượng hoặc làm giảm độ tin cậy với khách hàng high-ticket. Toàn bộ hành trình phải tạo được cảm giác: <em>người này đã trải qua mọi thứ, đã có đủ kinh nghiệm thực chiến, và biết chính xác mình đang làm gì.</em></div>
 
-  <!-- BÀI ĐẦU TIÊN -->
-  <div style="background:linear-gradient(135deg,rgba(245,200,66,0.1),rgba(0,212,170,0.06));border:1px solid rgba(245,200,66,0.35);border-radius:var(--radius);padding:28px 32px;margin-bottom:24px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:10px;">BÀI PHẢI LÀM TRƯỚC TIÊN — TRƯỚC KHI ĐĂNG BẤT CỨ THỨ GÌ</div>
-    <div style="font-size:20px;font-weight:800;margin-bottom:6px;">Reel: "The journey of a trader" — phiên bản của Kiệt</div>
-    <div style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7;">Học từ nq.rich Reel #1 — bài đạt 22K likes, không CTA, không voiceover. Cùng cấu trúc, footage thật của Kiệt. Không sản xuất phức tạp. Không AI. Chỉ cần ảnh/video thật từ hành trình — càng thô càng tốt.</div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;">
-      <div style="background:rgba(0,0,0,0.3);border-radius:8px;padding:12px;font-size:12px;">
-        <div style="color:var(--gold);font-weight:700;margin-bottom:4px;">FRAME 1</div>
-        <div style="color:var(--text);margin-bottom:4px;">Kiệt ngồi trước chart hiện tại</div>
-        <div style="color:var(--muted);">"Watch how trading changed my life..."</div>
-      </div>
-      <div style="background:rgba(0,0,0,0.3);border-radius:8px;padding:12px;font-size:12px;">
-        <div style="color:var(--red);font-weight:700;margin-bottom:4px;">FRAME 2–3</div>
-        <div style="color:var(--text);margin-bottom:4px;">Ảnh hồi nhỏ / nơi lớn lên</div>
-        <div style="color:var(--muted);">"I grew up where money was only enough for food. Nobody invested."</div>
-      </div>
-      <div style="background:rgba(0,0,0,0.3);border-radius:8px;padding:12px;font-size:12px;">
-        <div style="color:var(--red);font-weight:700;margin-bottom:4px;">FRAME 4–7 · PAIN</div>
-        <div style="color:var(--text);margin-bottom:4px;">Màn hình lỗ, vở học, khoảnh khắc khó khăn thật</div>
-        <div style="color:var(--muted);">"Lost [số tiền] in [X] months. Thought I was done."</div>
-      </div>
-      <div style="background:rgba(0,0,0,0.3);border-radius:8px;padding:12px;font-size:12px;">
-        <div style="color:var(--teal);font-weight:700;margin-bottom:4px;">FRAME 8–9 · TURN</div>
-        <div style="color:var(--text);margin-bottom:4px;">First payout. Cuộc sống thay đổi.</div>
-        <div style="color:var(--muted);">"This is just the beginning."</div>
+  <div class="warn"><strong>Nguyên tắc kể chuyện:</strong> Người mua high-ticket không cần người hoàn hảo — họ cần người đã thật sự trải qua, thất bại thật, và tìm ra hướng đi. Số liệu cụ thể quan trọng hơn câu chuyện được đánh bóng.</div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <div class="arc-block">
+      <div class="arc-phase"><div class="arc-phase-num">01</div><div class="arc-phase-label">Xuất phát điểm</div></div>
+      <div class="arc-content">
+        <div class="arc-content-title">Rời quê — quyết định không ai ủng hộ</div>
+        <p>Cả lớp chọn đại học. Kiệt chọn Sài Gòn. Thầy cô gọi điện cho gia đình. Gia đình khóc. Kiệt không thay đổi quyết định. <strong>Không phải vì liều — vì đã tính toán.</strong></p>
+        <p>Mua MacBook bằng toàn bộ tiền tiết kiệm. Còn 3–4 triệu trong tài khoản.</p>
+        <div class="arc-data"><span class="arc-chip">17 tuổi</span><span class="arc-chip">$0 vốn thực tế</span><span class="arc-chip">0 mentor</span><span class="arc-chip">0 network</span></div>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-      <div style="padding:12px 16px;background:rgba(0,212,170,0.07);border:1px solid rgba(0,212,170,0.2);border-radius:8px;font-size:13px;">
-        <strong style="color:var(--teal);">Caption:</strong> <span style="color:var(--muted);">"The journey of a trader. 📈" — không hơn. Không CTA. Không bán gì.</span>
-      </div>
-      <div style="padding:12px 16px;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;font-size:13px;">
-        <strong style="color:var(--red);">Kiệt cần chuẩn bị:</strong> <span style="color:var(--muted);">Tập hợp footage/ảnh thật từ hành trình — ảnh hồi nhỏ, màn hình lỗ, vở ghi chép, screenshot payout đầu tiên.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="phase-block">
-    <div class="phase-tag">Phase 1A — Tuần 1–2</div>
-    <div class="phase-title">Xuất hiện mạnh mẽ</div>
-    <div class="phase-sub">Chuyển khán giả từ: <strong>Chưa biết Kiệt là ai</strong> → <strong>"Người này thú vị"</strong><br/><br/>Đăng "The journey of a trader" trước. Sau đó đăng tiếp 3–4 bài trong 2 tuần. Không tự giới thiệu, không giải thích đang làm gì — vào thẳng như nhân vật đã tồn tại. Thuật toán cần thấy tương tác thật từ đầu, ưu tiên content gây phản ứng mạnh: tranh luận, bất ngờ, đồng cảm.</div>
-    <table class="content-table">
-      <thead>
-        <tr>
-          <th>Trụ cột</th>
-          <th>Format</th>
-          <th>Nội dung / Hook</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel — text overlay<br/><span style="font-size:11px;color:#a855f7;">★ Ưu tiên cao nhất</span></td>
-          <td class="hook-text"><strong style="color:var(--text);">"The journey of a trader 📈"</strong> — emotional montage, footage thật. Không voiceover. Cấu trúc học từ nq.rich Reel #1 (score 23,574).<br/><span style="font-size:12px;opacity:.5;font-style:normal;">→ Đây là bài mở kênh. Mọi thứ sau đây dễ hơn nhờ bài này.</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel — talking head 30–45s</td>
-          <td class="hook-text">"Stop trying to save your way to wealth." — quan điểm ngược dòng, gây tranh luận<br/><span style="font-size:12px; opacity:.6;">→ "Đừng cố tiết kiệm để giàu nữa."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Câu chuyện</span></td>
-          <td style="color:var(--muted);">Carousel 7–8 slides</td>
-          <td class="hook-text">"I grew up where money was only enough for food. Nobody invested. Then I left." — Chương 1: nơi Kiệt lớn lên, tại sao anh phải tự tìm ra mọi thứ. Chưa cần kết thúc happy — chỉ cần tò mò chapter tiếp.<br/><span style="font-size:12px; opacity:.6;">→ "Tôi lớn lên nơi tiền chỉ đủ lo cơm áo. Không ai đầu tư. Rồi tôi rời đi."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Stories</td>
-          <td class="hook-text">Poll: "Do you think anyone can earn from financial markets?" — xây thói quen tương tác từ ngày đầu<br/><span style="font-size:12px; opacity:.6;">→ "Bạn có nghĩ ai cũng có thể kiếm tiền từ thị trường tài chính không?"</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">Reel emotional journey đạt 10K–20K views · Tỉ lệ tương tác ổn định · Không mất followers</span>
-    </div>
-  </div>
-
-  <div class="phase-block">
-    <div class="phase-tag">Phase 1B — Tuần 3–4</div>
-    <div class="phase-title">Câu chuyện thật + Keyword CTA đầu tiên</div>
-    <div class="phase-sub">Chuyển khán giả từ: <strong>"Người này thú vị"</strong> → <strong>"Mình muốn biết thêm về người này"</strong><br/><br/>Thuật toán đã nhận diện kênh từ tuần 1–2. Giờ đẩy 2 thứ song song: (1) câu chuyện thật của Kiệt với số liệu cụ thể — tạo credibility sâu; (2) Reel ICT dense list để signal "người trong cuộc" với audience trader quốc tế. Cuối phase: test Reel keyword CTA đầu tiên để có baseline comment rate trước tháng 2.</div>
-    <table class="content-table">
-      <thead>
-        <tr>
-          <th>Trụ cột</th>
-          <th>Format</th>
-          <th>Nội dung / Hook</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel — talking head</td>
-          <td class="hook-text">"My entire class went to university. I didn't. This is the 1-year update."<br/><span style="font-size:12px; opacity:.6;">→ "Cả lớp tôi vào đại học. Tôi thì không. Đây là cập nhật sau 1 năm."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Câu chuyện</span></td>
-          <td style="color:var(--muted);">Carousel 7–8 slides</td>
-          <td class="hook-text">"I grew up where nobody thought differently about money. Then I left — and lost everything first." — Chương 2: thất bại đầu tiên, số cụ thể<br/><span style="font-size:12px; opacity:.6;">→ "Tôi lớn lên nơi không ai nghĩ khác về tiền. Rồi tôi đi — và mất trắng trước."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Education</span></td>
-          <td style="color:var(--muted);">Reel — rapid-fire 60s<br/><span style="font-size:11px;color:var(--teal);">★ Drives saves</span></td>
-          <td class="hook-text">"5 things that changed how I read NQ every morning." — dense list, ICT language (order blocks, FVG, liquidity, kill zones, NY session). Mỗi concept 2 câu. Ends: <strong style="color:var(--teal);">"Save this."</strong><br/><span style="font-size:12px;opacity:.5;font-style:normal;">Học từ nq.rich Reel #3 "7 ICT Lessons" — score 8,860. Không CTA mua. Mục đích: saves → organic reach + signal là trader thật.</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Education</span></td>
-          <td style="color:var(--muted);">Reel — talking head 60s<br/><span style="font-size:11px;color:#a855f7;">★ Keyword CTA test</span></td>
-          <td class="hook-text">"I know where NQ is going every single morning just by reading these 3 things." — dạy NY session profiles (continuation / reversal / consolidation / seek &amp; destroy). Ends: <strong style="color:#a855f7;">"Comment NQ and I'll send you my full breakdown free."</strong><br/><span style="font-size:12px;opacity:.5;font-style:normal;">Học từ nq.rich Reel #2 — cùng hook, cùng cấu trúc. ManyChat gửi PDF breakdown.</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Stories</td>
-          <td class="hook-text">Behind the scenes thật: Kiệt ngồi phân tích chart buổi sáng. Không script, không filter.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">Ít nhất 1 Reel đạt 30K–50K views · Profile visits tăng rõ rệt · Keyword CTA Reel: đo số comments để có baseline</span>
-    </div>
-  </div>
-
-  <!-- KEYWORD CTA SYSTEM -->
-  <div style="background:rgba(168,85,247,0.07);border:1px solid rgba(168,85,247,0.25);border-radius:var(--radius);padding:28px 32px;margin-top:8px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:#a855f7;margin-bottom:10px;">KEYWORD CTA SYSTEM — BẮT ĐẦU TỪ TUẦN 3</div>
-    <div style="font-size:16px;font-weight:700;margin-bottom:12px;">Cơ chế tạo ra 7.6× comments — học trực tiếp từ nq.rich</div>
-    <div style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7;">Nq.rich cùng 1 bài dạy: <strong style="color:var(--text);">có keyword CTA → 1,693 comments</strong> vs không có → 221 comments. Algorithm đọc comments bùng nổ là "high engagement" → đẩy thêm reach. ManyChat auto-reply xử lý toàn bộ.</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;">
-      <div style="background:rgba(0,0,0,0.3);border-radius:10px;padding:16px;">
-        <div style="font-size:10px;color:#a855f7;letter-spacing:1px;margin-bottom:8px;">BƯỚC 1 · HOOK</div>
-        <div style="font-size:13px;font-weight:600;margin-bottom:6px;">Claim táo bạo</div>
-        <div style="font-size:12px;color:var(--muted);">"I know where NQ is going every single morning just by using these 3 things."</div>
-      </div>
-      <div style="background:rgba(0,0,0,0.3);border-radius:10px;padding:16px;">
-        <div style="font-size:10px;color:#a855f7;letter-spacing:1px;margin-bottom:8px;">BƯỚC 2 · TEACH</div>
-        <div style="font-size:13px;font-weight:600;margin-bottom:6px;">Dạy thật — dense, cụ thể</div>
-        <div style="font-size:12px;color:var(--muted);">NY session profiles / ICT concepts / confluence checklist — dùng đúng ngôn ngữ ICT để signal là "người trong cuộc"</div>
-      </div>
-      <div style="background:rgba(0,0,0,0.3);border-radius:10px;padding:16px;">
-        <div style="font-size:10px;color:#a855f7;letter-spacing:1px;margin-bottom:8px;">BƯỚC 3 · CTA</div>
-        <div style="font-size:13px;font-weight:600;margin-bottom:6px;">1 từ trigger ManyChat</div>
-        <div style="font-size:12px;color:var(--muted);">"Comment <strong style="color:#a855f7;">NQ</strong> and I'll send you my full breakdown free." → ManyChat auto-reply PDF/voice note</div>
+    <div class="arc-block">
+      <div class="arc-phase"><div class="arc-phase-num">02</div><div class="arc-phase-label">Thất bại đầu tiên</div></div>
+      <div class="arc-content">
+        <div class="arc-content-title">Đa cấp — mất gần $2,000 USD</div>
+        <p>Đi phỏng vấn quán cà phê — thực ra là văn phòng đa cấp. Nhập hàng 14 triệu, rồi 100 triệu (mượn gia đình). Bị phốt trên mạng quê nhà. Sống 20m² 3 người. <strong>Ăn chay từ thiện dưới $0.05/bữa. Chi tiêu $15–20/tháng.</strong></p>
+        <p>Bán được 54/100 triệu vốn. Lỗ ~$2,000 USD — số tiền lớn nhất Kiệt từng mất lúc đó.</p>
+        <div class="arc-data"><span class="arc-chip">Lỗ ~$2,000</span><span class="arc-chip">Bị phốt mạng xã hội</span><span class="arc-chip">Không bỏ cuộc</span></div>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div style="padding:12px 16px;background:rgba(0,0,0,0.2);border-radius:8px;font-size:12px;color:var(--muted);">
-        <strong style="color:var(--text);">Keyword gợi ý cho Kiệt:</strong> NQ / SETUP / SYSTEM / CONFLUENCE / EDGE — chọn 1 từ ngắn, viết HOA, dễ nhớ
+    <div class="arc-block">
+      <div class="arc-phase"><div class="arc-phase-num">03</div><div class="arc-phase-label">Vào Trading</div></div>
+      <div class="arc-content">
+        <div class="arc-content-title">$699 — lần đầu phá vỡ "định luật tiền"</div>
+        <p>Dùng tiền còn lại từ đa cấp mở tài khoản. Lần đầu tiên kiếm $5–40 trong một ngày. <strong>Đây là khoảnh khắc thay đổi toàn bộ cách Kiệt nhìn về tiền.</strong> Nếu có thể kiếm $40 trong 1 ngày — tại sao không thể kiếm $400? $4,000?</p>
+        <p>Làm 20 tiếng/ngày, ngủ 4 tiếng. Ảnh 1:42AM. Mua khóa học Kevin — $350 khi gần hết tiền.</p>
+        <div class="arc-data"><span class="arc-chip">$699 vốn ban đầu</span><span class="arc-chip">$5–40/ngày đầu tiên</span><span class="arc-chip">20h làm việc/ngày</span></div>
       </div>
-      <div style="padding:12px 16px;background:rgba(0,0,0,0.2);border-radius:8px;font-size:12px;color:var(--muted);">
-        <strong style="color:var(--text);">ManyChat gửi gì:</strong> PDF breakdown ngắn (1 trang) hoặc voice note 2–3 phút — có giá trị thật, không phải sales pitch
+    </div>
+    <div class="arc-block">
+      <div class="arc-phase"><div class="arc-phase-num">04</div><div class="arc-phase-label">Khủng hoảng</div></div>
+      <div class="arc-content">
+        <div class="arc-content-title">Tháng 2/2024 — lần đầu tiên khóc</div>
+        <p>Lỗ liên tục. Tiền nhà đến hạn. Áp lực đỉnh điểm. <strong>Lần đầu tiên trong hành trình khởi nghiệp, Kiệt khóc.</strong> Không phải vì thất bại — mà vì không biết mình đang sai ở đâu.</p>
+        <p>Dừng lại 1 tuần. Nhìn lại toàn bộ. Xác định vấn đề là tâm lý — không phải kỹ thuật. Quay lại và kiếm $400 trong tuần đầu tiên sau đó.</p>
+        <div class="arc-data"><span class="arc-chip">Điểm thấp nhất</span><span class="arc-chip">Dừng 1 tuần</span><span class="arc-chip">$400 tuần tiếp theo</span></div>
+      </div>
+    </div>
+    <div class="arc-block">
+      <div class="arc-phase"><div class="arc-phase-num">05</div><div class="arc-phase-label">Kết quả hiện tại</div></div>
+      <div class="arc-content">
+        <div class="arc-content-title">Kết quả hiện tại — những gì người mua high-ticket thực sự muốn thấy</div>
+        <p>Kết quả cần được xác nhận cụ thể với Kiệt. Đây là những kết quả mà người mua coaching high-ticket trong ngách tài chính sẵn sàng trả tiền để có được:</p>
+        <ul class="check-list" style="margin-top:10px;">
+          <li><strong>Lợi nhuận ổn định hàng tháng (Consistent monthly P&amp;L — kết quả giao dịch tổng hợp theo tháng):</strong> Không phải mỗi lệnh đều thắng — nhưng mỗi tháng đều có lãi. Cần con số cụ thể.</li>
+          <li><strong>Tự do thời gian (Time freedom):</strong> Không ngồi nhìn biểu đồ 8 tiếng mỗi ngày. Có hệ thống vận hành — thị trường chạy, Kiệt không cần phải luôn có mặt.</li>
+          <li><strong>Không phụ thuộc địa điểm (Location independence):</strong> Laptop và kết nối mạng là đủ. Thu nhập không bị ràng buộc bởi vị trí địa lý.</li>
+          <li><strong>Tự ra quyết định độc lập (Independent decision-making):</strong> Không cần theo tín hiệu của người khác. Tự đọc được thị trường. Tự phân tích và hành động.</li>
+        </ul>
+        <p style="margin-top:12px;"><em>→ Cần xác nhận với Kiệt: con số lợi nhuận hàng tháng trung bình, tỷ lệ thắng lệnh (win rate), số giờ giao dịch mỗi ngày hiện tại. Đây là phần quan trọng nhất để xây dựng độ tin cậy với khách hàng high-ticket.</em></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MONTH 2 -->
-<section class="section" id="month2">
-  <h2 class="section-title">Tháng 2 — <span>Xây tin</span></h2>
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <div class="section-tag">04 — Lộ trình 4 tháng</div>
+  <div class="section-title">Tổng quan —<span> kiểm tra bán hàng từ tháng 2</span></div>
 
-  <div class="month-goal">
-    <strong>Mục tiêu tháng:</strong> Chuyển khán giả từ "thú vị" sang "tin tưởng thật sự". Lần đầu tiên nói về cơ hội tham gia cộng đồng — gián tiếp và nhẹ nhàng. Cuối tháng: test xem có bao nhiêu người thật sự quan tâm trước khi mở tháng 3.
-  </div>
-
-  <div class="phase-block">
-    <div class="phase-tag">Phase 2A — Tuần 5–6</div>
-    <div class="phase-title">Kể thất bại thật</div>
-    <div class="phase-sub">Chuyển khán giả từ: <strong>"Mình muốn biết thêm"</strong> → <strong>"Mình hiểu và tin người này"</strong><br/><br/>Views từ tháng 1 kéo người về profile. Họ đang hỏi thầm: <em>"Người này thật không? Có phải đang diễn không?"</em> Giai đoạn này trả lời bằng thất bại thật — số tiền thua lỗ cụ thể, đêm muốn bỏ cuộc, cảm xúc không filter. Nghịch lý: kể thất bại là cách nhanh nhất để xây dựng trust. Không có giai đoạn này, viral chỉ tạo ra views — không tạo ra người theo dõi trung thành.</div>
-    <table class="content-table">
-      <thead>
-        <tr><th>Trụ cột</th><th>Format</th><th>Nội dung / Hook</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Authority</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"I lost $3,000 in my first 60 days. Here's what I didn't understand yet."<br/><span style="font-size:12px; opacity:.6;">→ "Tôi mất 3.000 đô trong 60 ngày đầu. Đây là điều tôi chưa hiểu lúc đó."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Authority</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"There was one night I almost quit everything. This is what happened."<br/><span style="font-size:12px; opacity:.6;">→ "Có một đêm tôi gần như bỏ tất cả. Đây là chuyện đã xảy ra."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">"The moment I realized the money rules I grew up with were completely wrong."<br/><span style="font-size:12px; opacity:.6;">→ "Khoảnh khắc tôi nhận ra những quy tắc về tiền tôi được dạy từ nhỏ là hoàn toàn sai."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Education</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"What if you could earn from other people's trades without risking your own money?"<br/><span style="font-size:12px; opacity:.6;">→ "Nếu bạn có thể kiếm tiền từ giao dịch của người khác mà không cần bỏ vốn của mình thì sao?"</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Proof</span></td>
-          <td style="color:var(--muted);">Reel — live trade recap<br/><span style="font-size:11px;color:#a855f7;">★ Keyword CTA</span></td>
-          <td class="hook-text">"Triple confluence — sweep of London High, 15-min order block, 4H FVG. Let's see what happens." → quay real-time setup → result thật. Ends: <strong style="color:#a855f7;">"Comment CONFLUENCE and I'll send you my full checklist."</strong><br/><span style="font-size:12px;opacity:.5;font-style:normal;">Học từ nq.rich Reel #5 "TOP TICK" — score 6,799. Bùng nổ comment vì người muốn checklist + algo thấy engagement cao.</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Proof</span></td>
-          <td style="color:var(--muted);">Stories</td>
-          <td class="hook-text">Q&A: "Ask me anything about starting from zero."<br/><span style="font-size:12px; opacity:.6;">→ "Hỏi tôi bất cứ điều gì về việc bắt đầu từ con số 0."</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">DM hỏi "làm thế nào để bắt đầu?" · Keyword CTA Reels: đo comment rate để so sánh với baseline tuần 3–4 · Live trade recap: đo saves</span>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot m1">1</div>
+      <div class="tl-month">Tháng 1</div>
+      <div class="tl-name">Xây nền tảng</div>
+      <div class="tl-desc">Bùng nổ content. Xây dựng nhân vật. Kiểm tra hook. Đủ niềm tin để người lạ theo dõi và tin tưởng.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot m2">2</div>
+      <div class="tl-month">Tháng 2</div>
+      <div class="tl-name">Xây Telegram + Chốt Khách Đầu</div>
+      <div class="tl-desc">Thu người vào Telegram. Tạo sự tò mò về coaching. Tạo cảm giác khan hiếm trong nhóm và IG Story. Chốt 2–3 hợp đồng đầu tiên.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot m3">3</div>
+      <div class="tl-month">Tháng 3</div>
+      <div class="tl-name">Thu hút 50–100 người, Chốt 10 Khách</div>
+      <div class="tl-desc">Bằng chứng từ tháng 2 kéo thêm người vào Telegram. Nhóm đủ sức nóng. Chốt tổng cộng 10 hợp đồng.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot m4">4</div>
+      <div class="tl-month">Tháng 4</div>
+      <div class="tl-name">Vòng Lặp Bằng Chứng + Nhân Rộng</div>
+      <div class="tl-desc">Vòng lặp bằng chứng đang tự chạy. Tối ưu quy trình. Nhân rộng mà không cần thêm công sức.</div>
     </div>
   </div>
 
-  <div class="phase-block">
-    <div class="phase-tag">Phase 2B — Tuần 7–8</div>
-    <div class="phase-title">Giới thiệu cơ hội — Test phản ứng</div>
-    <div class="phase-sub">Chuyển khán giả từ: <strong>"Mình tin người này"</strong> → <strong>"Mình tò mò về cơ hội Kiệt đang nói đến"</strong><br/><br/>Đây là giai đoạn then chốt của 2 tháng đầu. Lần đầu tiên nói gián tiếp về cộng đồng — không bán, không announce, chỉ giới thiệu khái niệm và đo phản ứng.Cuối giai đoạn: Stories test đơn giản để đếm xem có bao nhiêu người thật sự quan tâm — đây là data để quyết định quy mô mở cộng đồng tháng 3.</div>
-    <table class="content-table">
-      <thead>
-        <tr><th>Trụ cột</th><th>Format</th><th>Nội dung / Hook</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-education">Education</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"Here's how I earn from financial markets without sitting in front of charts all day."<br/><span style="font-size:12px; opacity:.6;">→ "Đây là cách tôi kiếm tiền từ thị trường tài chính mà không cần ngồi nhìn chart cả ngày."</span><br/><span style="font-size:12px; opacity:.5; font-style:normal;">— Giới thiệu góc affiliate: kiếm tiền từ tài chính bằng cách bán slot, không phải trading</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Education</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">"You don't need your own capital to earn from financial markets."<br/><span style="font-size:12px; opacity:.6;">→ "Bạn không cần vốn của chính mình để kiếm tiền từ thị trường tài chính."</span><br/><span style="font-size:12px; opacity:.5; font-style:normal;">— Seed góc affiliate: không cần vốn, chỉ cần xây kênh và bán slot</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Authority</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"I stopped trading my own money for 30 days. Here's what I did instead."<br/><span style="font-size:12px; opacity:.6;">→ "Tôi ngừng dùng tiền của mình để giao dịch trong 30 ngày. Đây là điều tôi làm thay vào đó."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Proof</span></td>
-          <td style="color:var(--muted);">Stories TEST</td>
-          <td class="hook-text" style="color:var(--gold);"><strong>"I'm building something. If you want to know what it is, reply with 'in'."</strong><br/><span style="font-size:12px; opacity:.7; font-style:italic; font-weight:400; color:var(--muted);">→ "Tôi đang xây một thứ. Nếu bạn muốn biết đó là gì, reply 'in'."</span></td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Proof</span></td>
-          <td style="color:var(--muted);">Stories follow-up</td>
-          <td class="hook-text">Cho người đã reply: explain ngắn, hỏi về họ — qualify lead.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">DMs từ 20–50 người · Thu thập được top 3–5 lời từ chối phổ biến nhất (ví dụ: "mình chưa có kinh nghiệm", "mình sợ mất tiền", "mình không có thời gian") → đây là nguyên liệu để viết content xử lý từ chối trong tháng 3</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;">
+    <div class="angle-block ab-2" style="margin-bottom:0;">
+      <div class="angle-header" style="padding-bottom:12px;">
+        <div><div class="angle-num" style="color:var(--teal);">Tháng 1</div><div class="angle-name">Xây nền tảng nhân vật</div></div>
+      </div>
+      <div class="angle-body">
+        <div class="angle-box" style="margin-bottom:12px;">
+          <div class="angle-box-label">Mục tiêu</div>
+          <p>Đăng 3–4 bài/ngày liên tục. Xây hình ảnh nhân vật rõ ràng. Kiểm tra loại hook nào thu hút đúng tệp. Kết thúc tháng 1 với đủ niềm tin để người lạ theo dõi và tin tưởng.</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Tại sao làm giai đoạn này</div>
+          <p>Không ai mua coaching từ người họ chưa biết. Tháng 1 không bán gì — chỉ xây chất liệu để tháng 2 có thứ chuyển đổi. Không có giai đoạn này, mọi nỗ lực bán sau đó đều lạnh.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- MONTH 3 -->
-<section class="section" id="month3">
-  <h2 class="section-title">Tháng 3 — <span>Mở cộng đồng</span></h2>
-
-  <div class="month-goal">
-    <strong>Mục tiêu tháng:</strong> Chuyển người "tò mò" sang "tham gia". Onboard đợt 1 (20–50 người). Tạo ra bằng chứng thật đầu tiên từ thành viên — đây là nhiên liệu cho toàn bộ tháng 4.
-  </div>
-
-  <div style="background:rgba(245,200,66,0.06); border:1px solid rgba(245,200,66,0.2); border-radius:10px; padding:14px 20px; margin-bottom:24px; font-size:13px; color:var(--muted);">
-    <strong style="color:var(--gold);">Lưu ý tháng 3–4:</strong> Vẫn duy trì đầy đủ content viral và <strong style="color:var(--gold);">tuyến câu chuyện cá nhân của Kiệt</strong> như các tháng trước — không cắt, không bỏ hẳn. Hành trình của Kiệt vẫn tiếp tục được kể song song với việc mở cộng đồng. Đẩy mạnh thêm content mời gọi, xử lý từ chối và bằng chứng thật. Tỉ lệ: Viral + Story (cá nhân) vẫn chạy đủ · Proof + Education tăng tần suất.
-  </div>
-
-  <div class="phase-block">
-    <div class="phase-tag">Phase 3A — Tuần 9–10</div>
-    <div class="phase-title">Announce và mở cộng đồng đợt 1</div>
-    <div class="phase-sub">Chuyển khán giả từ: <strong>"Tò mò"</strong> → <strong>"Mình muốn vào"</strong><br/><br/>Data từ tháng 2 đã cho biết ai quan tâm và lý do từ chối lớn nhất của họ. Giai đoạn này dùng chính data đó: announce cộng đồng + đồng thời xử lý thẳng từng lời từ chối phổ biến nhất bằng content. Không mở link công khai — dùng DM để tạo friction tốt, chỉ người thực sự muốn tham gia mới chủ động nhắn. Kết quả: tỉ lệ chuyển đổi cao hơn, thành viên chủ động hơn.</div>
-    <table class="content-table">
-      <thead>
-        <tr><th>Trụ cột</th><th>Format</th><th>Nội dung / Hook</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">Tôi đang xây một thứ trong 2 tháng qua. Đây là lúc mình mở ra — và đây là lý do tại sao.</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Giáo dục</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">Trả lời thẳng top 3 lý do từ chối phổ biến nhất — "Bạn không cần kinh nghiệm trading. Bạn không cần vốn lớn. Đây là sự thật."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Câu chuyện</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">Tại sao tôi chọn xây cộng đồng thay vì chỉ trading một mình — và điều đó thay đổi gì.</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Stories mời gọi</td>
-          <td class="hook-text">Nhắn "THAM GIA" để mình gửi thông tin chi tiết — không đăng link công khai, chỉ ai chủ động nhắn mới được nhận.</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">Duy trì — không dừng viral dù đang mở cộng đồng. Kênh vẫn phải kéo người mới về liên tục.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">50–100 người tham gia đợt 1 · Lọc giữ lại 20 người cam kết và có tiềm năng chuyển đổi cao</span>
+    <div class="angle-block ab-3" style="margin-bottom:0;">
+      <div class="angle-header" style="padding-bottom:12px;">
+        <div><div class="angle-num" style="color:var(--gold);">Tháng 2</div><div class="angle-name">Xây Telegram + Chốt khách đầu</div></div>
+      </div>
+      <div class="angle-body">
+        <div class="angle-box" style="margin-bottom:12px;">
+          <div class="angle-box-label">Mục tiêu</div>
+          <p>Bắt đầu kéo người vào Telegram. Seed nhẹ coaching qua Stories và DM. Mở discovery call cuối tháng — chốt 2–3 hợp đồng đầu tiên.</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Tại sao làm giai đoạn này</div>
+          <p>Bán sớm để lấy data thật — objection thật, câu hỏi thật từ khách hàng thật. 2–3 sales đầu tiên là proof để scale tháng 3. Nếu positioning sai, phát hiện ở tháng 2 còn kịp điều chỉnh.</p>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="phase-block">
-    <div class="phase-tag">Phase 3B — Tuần 11–12</div>
-    <div class="phase-title">Tạo bằng chứng thật — Tiếp tục bán</div>
-    <div class="phase-sub">Chuyển khán giả từ: <strong>"Đang cân nhắc"</strong> → <strong>"Mình phải vào trước khi bỏ lỡ"</strong><br/><br/>Thành viên đợt 1 đã vào cộng đồng. Ưu tiên số 1: tạo ra kết quả thật sớm nhất có thể — dù nhỏ. Bằng chứng thật từ người thật là thứ không thể mua được bằng content hay quảng cáo. Song song: vẫn mở cửa cho người mới — cộng đồng chưa đóng, ai muốn vào vẫn có thể nhắn DM. Không dừng bán ở tuần 11 — chỉ giảm cường độ announce, tăng cường độ proof.</div>
-    <table class="content-table">
-      <thead>
-        <tr><th>Trụ cột</th><th>Format</th><th>Nội dung / Hook</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">Kết quả tuần đầu trong cộng đồng của Kiệt — ẩn tên, hiện số thật. Không tô hồng, không phóng đại.</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">Tuần 1 bên trong cộng đồng thực sự trông như thế nào — đây là sự thật.</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Giáo dục</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">2 tuần đầu trong cộng đồng của Kiệt — bạn sẽ học gì, làm gì, và cần gì để bắt đầu.</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">Duy trì viral layer — không ngừng kéo người mới vào kênh.</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Câu chuyện</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">Chương 3 hành trình Kiệt: khoảnh khắc quyết định ngừng đi một mình và bắt đầu xây cộng đồng — tại sao, cảm xúc thật, và điều đó thay đổi gì.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">20 người ở lại có kết quả đo được · Tối ưu chất lượng: mỗi người trong nhóm này phải là bằng chứng sống cho đợt 2</span>
+    <div class="angle-block ab-4" style="margin-bottom:0;">
+      <div class="angle-header" style="padding-bottom:12px;">
+        <div><div class="angle-num" style="color:var(--blue);">Tháng 3</div><div class="angle-name">Scale với bằng chứng thật</div></div>
+      </div>
+      <div class="angle-body">
+        <div class="angle-box" style="margin-bottom:12px;">
+          <div class="angle-box-label">Mục tiêu</div>
+          <p>Dùng kết quả học viên từ tháng 2 làm content. Telegram đạt 50–100 người. Nhóm đủ sức nóng để chốt tổng cộng 10 hợp đồng trong tháng.</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Tại sao làm giai đoạn này</div>
+          <p>Bằng chứng thật từ học viên là loại content conversion mạnh nhất — không cần thuyết phục thêm. Tháng 3 không cần content mới hoàn toàn, chỉ cần khuếch đại proof đang có.</p>
+        </div>
+      </div>
+    </div>
+    <div class="angle-block ab-5" style="margin-bottom:0;">
+      <div class="angle-header" style="padding-bottom:12px;">
+        <div><div class="angle-num" style="color:var(--purple);">Tháng 4</div><div class="angle-name">Vòng lặp tự chạy + Nhân rộng</div></div>
+      </div>
+      <div class="angle-body">
+        <div class="angle-box" style="margin-bottom:12px;">
+          <div class="angle-box-label">Mục tiêu</div>
+          <p>Hệ thống proof đang tự nuôi mình. Tối ưu quy trình bán hàng. Chuẩn bị nhân rộng sang thị trường quốc tế mà không cần tăng khối lượng công việc.</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Tại sao làm giai đoạn này</div>
+          <p>Sau 3 tháng, Kiệt không còn bán bằng content từ đầu — bán bằng kết quả học viên và danh tiếng đã có. Tháng 4 là điểm chuyển từ founder-led sang hệ thống tự vận hành.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MONTH 4 -->
-<section class="section" id="month4">
-  <h2 class="section-title">Tháng 4 — <span>Nhân rộng</span></h2>
+<!-- CONTENT DISTRIBUTION BY PHASE -->
+<section class="section" id="funnel">
+  <div class="section-tag">05 — Phễu bán hàng high-ticket</div>
+  <div class="section-title">Nội dung IG → Stories → Telegram →<span> Nhóm Miễn Phí → Nhóm Trả Phí → High-ticket Coaching</span></div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:24px;font-style:italic;">Phễu bán hàng (funnel): hành trình của người lạ từ lần đầu thấy nội dung cho đến khi trở thành khách hàng — qua nhiều bước tiếp xúc ngày càng sâu hơn.</p>
 
-  <div class="month-goal">
-    <strong>Mục tiêu tháng:</strong> Dùng bằng chứng từ đợt 1 để mở đợt 2 (50–100 người). Kích hoạt cơ chế referral: thành viên chủ động giới thiệu người mới và nhận hoa hồng. Cộng đồng bắt đầu tự lớn.
-  </div>
-
-  <div style="background:rgba(245,200,66,0.06); border:1px solid rgba(245,200,66,0.2); border-radius:10px; padding:14px 20px; margin-bottom:24px; font-size:13px; color:var(--muted);">
-    <strong style="color:var(--gold);">Lưu ý tháng 4:</strong> Vẫn duy trì đầy đủ content viral và <strong style="color:var(--gold);">tuyến câu chuyện cá nhân của Kiệt</strong> — không bỏ hẳn. Câu chuyện tháng 4 là Chương 4: nhìn lại hành trình, những con số thật, và bước tiếp theo. Đẩy mạnh thêm content bằng chứng thật từ thành viên đợt 1 và dạy thành viên cách refer để cộng đồng tự nhân rộng. Tỉ lệ: Viral + Story (cá nhân) vẫn chạy đủ · Proof + Referral Education tăng tần suất mạnh hơn.
-  </div>
-
-  <div class="phase-block">
-    <div class="phase-tag">Phase 4A — Tuần 13–14</div>
-    <div class="phase-title">Dùng proof mở đợt 2</div>
-    <div class="phase-sub">Mục tiêu: <strong>Biến kết quả của đợt 1 thành content để mở đợt 2 lớn hơn</strong><br/><br/>Bằng chứng từ đợt 1 là tài sản lớn nhất lúc này — mỗi kết quả của thành viên là một bài đăng. Kiệt không còn là người duy nhất tạo proof nữa: cộng đồng đang tự tạo proof cho chính nó. Người xem kênh IG thấy người thật trong cộng đồng thật có kết quả thật → FOMO tự nhiên → chủ động nhắn hỏi vào đợt 2 mà không cần thuyết phục thêm. Đây là lúc đặt mục tiêu cao hơn: follower tăng mạnh, views phải vượt ngưỡng tháng 3.</div>
-    <table class="content-table">
-      <thead>
-        <tr><th>Trụ cột</th><th>Format</th><th>Nội dung / Hook</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"Họ vào cộng đồng 30 ngày trước. Đây là những gì đã thay đổi."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">"Tôi không dạy trading. Tôi cho bạn thấy kết quả thật từ người trong cộng đồng."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Câu chuyện</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"Điều xây hệ thống dạy tôi mà tự giao dịch một mình không bao giờ dạy được."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Mô hình</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"Mọi câu hỏi bạn hỏi về cộng đồng — mình trả lời hết trong bài này."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">"Tại sao hầu hết mọi người học trading mãi mà không ra tiền — và cách tôi tiếp cận khác."</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">50–100 người tham gia đợt 2 · Lọc giữ lại nhóm chất lượng cao · Proof từ đợt 1 là công cụ bán chính</span>
+  <div class="funnel-visual">
+    <div class="funnel-step">
+      <div class="funnel-arrow">1</div>
+      <div>
+        <div class="funnel-step-title">Nội dung Feed — Người lạ thấy, dừng lại</div>
+        <div class="funnel-step-sub">Reels + Carousel (4 kiểu nội dung — xem phần 06). Mục tiêu duy nhất: khiến người lạ nhấn theo dõi. Chưa đề cập offer. Chưa đề cập coaching. Feed như bảng hiệu ngoài đường — mọi người nhìn thấy nhưng không ai bán ở đây.</div>
+      </div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-arrow">2</div>
+      <div>
+        <div class="funnel-step-title">Instagram Stories — Nuôi dưỡng + Phá từ chối trước khi chúng xảy ra</div>
+        <div class="funnel-step-sub">Chỉ người theo dõi mới thấy Stories — đây là không gian để Kiệt là chính mình. Mục tiêu kép: nuôi dưỡng niềm tin hàng ngày <strong>VÀ</strong> chủ động xử lý những lý do từ chối phổ biến nhất trước khi người ta có cơ hội nêu chúng với Kiệt. Không chờ người ta phản đối rồi mới giải thích — tìm những lý do từ chối hay gặp nhất trong IG (từ bình luận, DM, Q&amp;A) và biến chúng thành nội dung Stories thường xuyên. Bước chuyển từ "người theo dõi" sang "người đã được thuyết phục trước khi hỏi."</div>
+      </div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-arrow" style="background:rgba(0,136,204,.15);color:#2aabee;">3</div>
+      <div>
+        <div class="funnel-step-title">Telegram — Vào cộng đồng, xây dựng niềm tin qua bằng chứng thực tế</div>
+        <div class="funnel-step-sub">Người chủ động tham gia Telegram = người có ý định cao. Kiệt chia sẻ giao dịch thời gian thực, nhận định thị trường hàng ngày, tư duy đằng sau mỗi lệnh. Đây là nơi lịch sử kết quả được ghi lại công khai — bằng chứng trực tiếp về năng lực, không cần lời quảng cáo. Từ đây, người tham gia phân thành hai con đường.</div>
+      </div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-arrow" style="background:rgba(0,212,170,.15);color:var(--teal);">4</div>
+      <div>
+        <div class="funnel-step-title">Nhóm Miễn Phí → Nhóm Trả Phí — Lọc người nghiêm túc</div>
+        <div class="funnel-step-sub">Sau khi vào Telegram, người tham gia được phân luồng: <strong>Nhóm miễn phí</strong> — nội dung cơ bản, nhận định thị trường, tương tác cộng đồng. Ai theo dõi đủ lâu và đặt câu hỏi nghiêm túc sẽ được mời vào <strong>nhóm trả phí</strong> — nội dung chuyên sâu hơn, phân tích lệnh chi tiết, tương tác trực tiếp với Kiệt. Việc trả phí vào nhóm tự lọc ra người thực sự cam kết — đây là tệp khách hàng tiềm năng nhất cho coaching high-ticket.</div>
+      </div>
+    </div>
+    <div class="funnel-step" style="border-radius:0 0 var(--radius) var(--radius);">
+      <div class="funnel-arrow" style="background:rgba(245,200,66,.15);color:var(--gold);">5</div>
+      <div>
+        <div class="funnel-step-title">Nhóm Trả Phí → High-ticket Coaching — Chuyển đổi tự nhiên</div>
+        <div class="funnel-step-sub">Từ nhóm trả phí, người đã có đủ niềm tin và thấy kết quả thực tế. Cuộc trò chuyện về coaching 1:1 mở ra tự nhiên — không phải bán hàng lạnh. Kiệt nhận ra người phù hợp qua cách họ đặt câu hỏi trong nhóm, chủ động mời sang DM để tìm hiểu thêm. Tỷ lệ chuyển đổi ở bước này cao nhất vì niềm tin đã được xây dựng qua nhiều tuần tiếp xúc.</div>
+      </div>
     </div>
   </div>
 
-  <div class="phase-block">
-    <div class="phase-tag">Phase 4B — Tuần 15–16</div>
-    <div class="phase-title">Kích hoạt affiliate — Mạng lưới tự nhân rộng</div>
-    <div class="phase-sub">Mục tiêu: <strong>Affiliates bắt đầu xây kênh riêng, bán slot vào cộng đồng tín hiệu của Kiệt và nhận 80% hoa hồng</strong><br/><br/>Đây là giai đoạn hệ thống bắt đầu tự nhân rộng. Người theo dõi Kiệt thấy cơ hội affiliate → xây kênh cá nhân → bán slot → thu nhập không cần vốn, không cần trading. Kiệt dạy cách affiliate vận hành: không cần kỹ năng bán hàng, chỉ cần kết nối đúng người với cơ hội đúng. Kênh IG của Kiệt vẫn là kênh chính — nhưng giờ có thêm hàng chục affiliate đang chạy kênh song song. Kết thúc 4 tháng bằng tổng kết số liệu thật — tạo nền cho giai đoạn tiếp theo.</div>
-    <table class="content-table">
-      <thead>
-        <tr><th>Trụ cột</th><th>Format</th><th>Nội dung / Hook</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">"Anh ấy xây kênh 6 tuần trước. Giờ anh ấy đang bán slot vào cộng đồng tín hiệu của Kiệt và nhận 80% hoa hồng."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-education">Mô hình</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"Cách kiếm 80% hoa hồng từ mỗi người bạn giới thiệu vào cộng đồng tín hiệu — mà không cần biết trading."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-authority">Câu chuyện</span></td>
-          <td style="color:var(--muted);">Carousel</td>
-          <td class="hook-text">"4 tháng. Những con số thật. Và những gì tôi học được mà không có trong sách nào."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-viral">Viral</span></td>
-          <td style="color:var(--muted);">Reel</td>
-          <td class="hook-text">"4 tháng trước tôi chỉ có ý tưởng. Đây là hệ thống tôi đã xây được."</td>
-        </tr>
-        <tr>
-          <td><span class="pillar-tag pt-proof">Bằng chứng</span></td>
-          <td style="color:var(--muted);">Stories</td>
-          <td class="hook-text">Tổng kết thật: số thành viên, số referrer, kết quả nổi bật — ăn mừng cùng cộng đồng.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kpi-bar">
-      <span class="kpi-bar-label">KPI</span>
-      <span class="kpi-bar-value">Tổng người tham gia 2 đợt: 100–200 người · Nhóm affiliate chất lượng cao tự bán slot · Tỉ lệ chuyển đổi từ kênh sang slot ngày càng tăng</span>
+  <!-- TELEGRAM NURTURE IN DEPTH -->
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-label">Cách nuôi dưỡng lead trong Telegram — chi tiết từng ngày</div>
+    <div class="grid-2" style="margin-top:16px;gap:20px;">
+      <div>
+        <p style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Kênh phát sóng một chiều (Channel)</p>
+        <ul class="check-list">
+          <li><strong>Mỗi sáng 7–8h:</strong> Nhận định thị trường ngắn — "Hôm nay mình theo dõi vùng này, lý do: [2–3 câu]." Không cần đúng 100% — cần thật và nhất quán.</li>
+          <li><strong>Sau lệnh:</strong> Đăng kết quả thật — ảnh chụp màn hình lệnh, 1 dòng tư duy. Không cần thắng — cần minh bạch.</li>
+          <li><strong>Cuối tuần:</strong> Tóm tắt tuần — bao nhiêu lệnh, kết quả tổng, bài học lớn nhất. 3–5 câu.</li>
+          <li><strong>Không định kỳ:</strong> Insight thị trường khi có điều đáng nói — đừng đăng vì lịch, đăng vì có gì đó thật sự đáng chia sẻ.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Nhóm tương tác hai chiều (Group)</p>
+        <ul class="check-list">
+          <li><strong>Trả lời câu hỏi chọn lọc:</strong> Không trả lời tất cả — chỉ câu hỏi có chiều sâu. Câu trả lời ngắn nhưng sắc. Điều này tạo ra chất lượng conversation, không phải số lượng.</li>
+          <li><strong>Nhận ra người đang tìm kiếm nghiêm túc:</strong> Ai hỏi câu hỏi đúng loại (về tư duy, về hệ thống, về lý do đằng sau quyết định) → Kiệt nhắn riêng: "Câu hỏi của bạn thú vị, mình muốn nói chuyện thêm."</li>
+          <li><strong>Pinned message (tin nhắn ghim):</strong> Luôn ghim một tin nhắn giới thiệu coaching ngắn gọn — ai vào group đều thấy. Không cần nhắc lại mỗi ngày.</li>
+          <li><strong>Weekly voice session:</strong> 20–30 phút mỗi tuần — nhận định thị trường, Q&amp;A. Ai tham gia đều là lead ấm.</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding:16px 20px;background:var(--surface2);border-radius:10px;">
+      <p style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Cách chuyển từ nhóm sang sale</p>
+      <ul class="check-list">
+        <li>Người trong nhóm trả phí tích cực đặt câu hỏi → Kiệt nhắn riêng trong DM → hỏi 2–3 câu về tình huống → mời trao đổi thêm về coaching nếu phù hợp.</li>
+        <li>Không bao giờ chốt sale công khai trong nhóm — chỉ chốt trong DM hoặc cuộc gọi riêng.</li>
+        <li>Chi tiết quy trình chuyển đổi từ nhóm sang coaching được giải thích trong phần 07 — Telegram.</li>
+      </ul>
     </div>
   </div>
-</section>
 
-<!-- KPI DASHBOARD -->
-<section class="section" id="kpi">
-  <div class="section-tag">Phần 3 — Đo lường</div>
-  <h2 class="section-title">KPI <span>Dashboard</span></h2>
-
-  <div class="card" style="overflow-x:auto;">
-    <table class="kpi-table">
-      <thead>
-        <tr>
-          <th>Chỉ số</th>
-          <th class="kpi-t1">Cuối T1</th>
-          <th class="kpi-t2">Cuối T2</th>
-          <th class="kpi-t3">Cuối T3</th>
-          <th class="kpi-t4">Cuối T4</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="metric-name">Views/Reel trung bình</td>
-          <td class="kpi-val kpi-t1">20–50K</td>
-          <td class="kpi-val kpi-t2">50–100K</td>
-          <td class="kpi-val kpi-t3">80–150K</td>
-          <td class="kpi-val kpi-t4">100K+</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Người nhắn tin quan tâm</td>
-          <td class="kpi-val kpi-t1" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t2">20–50</td>
-          <td class="kpi-val kpi-t3">100–200</td>
-          <td class="kpi-val kpi-t4">300–500+</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Người tham gia (slot bán được)</td>
-          <td class="kpi-val kpi-t1" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t2" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t3">50–100</td>
-          <td class="kpi-val kpi-t4">100–200</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Người ở lại chất lượng cao</td>
-          <td class="kpi-val kpi-t1" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t2" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t3">20</td>
-          <td class="kpi-val kpi-t4">50+</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Bằng chứng thật từ thành viên</td>
-          <td class="kpi-val kpi-t1" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t2" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t3">3–5</td>
-          <td class="kpi-val kpi-t4">10–20</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Comments/Reel keyword CTA</td>
-          <td class="kpi-val kpi-t1">Baseline (test lần đầu)</td>
-          <td class="kpi-val kpi-t2">300–800+</td>
-          <td class="kpi-val kpi-t3">800–2,000+</td>
-          <td class="kpi-val kpi-t4">Scale với affiliate</td>
-        </tr>
-        <tr>
-          <td class="metric-name">ManyChat leads thu được</td>
-          <td class="kpi-val kpi-t1" style="color:var(--muted);">—</td>
-          <td class="kpi-val kpi-t2">100–300</td>
-          <td class="kpi-val kpi-t3">500–1,000</td>
-          <td class="kpi-val kpi-t4">1,000+</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-
-<!-- CHUẨN BỊ -->
-<section class="section">
-  <div class="section-tag">Trước khi bắt đầu</div>
-  <h2 class="section-title">3 thứ cần có <span>trước tuần 1</span></h2>
-
-  <div class="grid-3">
-    <div class="card" style="border-color:rgba(245,200,66,0.3);">
-      <div style="font-size:28px;font-weight:800;color:var(--gold);opacity:.4;margin-bottom:8px;">01</div>
-      <div style="font-size:16px;font-weight:700;margin-bottom:8px;">Footage thật từ hành trình</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.6;">Ảnh/video hồi nhỏ, nơi lớn lên, phòng học trading đầu tiên, màn hình lỗ, vở ghi chép, khoảnh khắc payout đầu tiên. Càng thô càng tốt. Đây là thứ không AI nào tạo được và là lý do nq.rich Reel #1 đạt 22K likes — eviction notices thật, ngủ trong xe thật.</div>
-    </div>
-    <div class="card" style="border-color:rgba(168,85,247,0.3);">
-      <div style="font-size:28px;font-weight:800;color:#a855f7;opacity:.4;margin-bottom:8px;">02</div>
-      <div style="font-size:16px;font-weight:700;margin-bottom:8px;">ManyChat setup cơ bản</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.6;">1 keyword trigger trước khi đăng Reel keyword CTA đầu tiên (tuần 3). Chọn: <strong style="color:var(--text);">NQ / SETUP / SYSTEM / EDGE</strong> — 1 từ, viết HOA. Auto-reply gửi PDF 1 trang hoặc voice note 2–3 phút có giá trị thật. Không setup = mất toàn bộ comment wave.</div>
-    </div>
-    <div class="card" style="border-color:rgba(0,212,170,0.3);">
-      <div style="font-size:28px;font-weight:800;color:var(--teal);opacity:.4;margin-bottom:8px;">03</div>
-      <div style="font-size:16px;font-weight:700;margin-bottom:8px;">Landing page tối giản</div>
-      <div style="font-size:13px;color:var(--muted);line-height:1.6;">Cần có trước tuần 7–8 khi Stories test bắt đầu. Không cần fancy. Chỉ cần: Kiệt là ai, cộng đồng signal hoạt động ra sao, affiliate model 80%, nút "Nhắn Kiệt." 1 trang, mobile-first.</div>
+  <!-- OBJECTION HANDLING HIGH-TICKET -->
+  <div class="card">
+    <div class="card-label">Instagram Stories — Kho lý do từ chối để xử lý chủ động trước khi người ta gặp Kiệt</div>
+    <p style="font-size:13px;color:var(--muted);margin:12px 0 20px;font-style:italic;">Chiến lược: <strong>không chờ người ta từ chối rồi mới giải thích — xử lý từ trước trên Stories.</strong> Thu thập những lý do từ chối phổ biến nhất từ bình luận, DM, Q&amp;A trên IG, rồi biến chúng thành nội dung Stories thường xuyên dưới dạng "có người hỏi mình…" hoặc "một điều mình thấy nhiều người hiểu sai là…". Khi người ta thực sự gặp Kiệt, những rào cản lớn nhất đã được tháo gỡ từ trước.</p>
+    <div class="grid-2" style="gap:16px;">
+      <ul class="check-list">
+        <li><strong>"Tôi đã học nhiều rồi nhưng vẫn chưa có kết quả — thêm một người dạy nữa có khác gì không?"</strong><br><span style="font-size:13px;color:var(--muted);">→ "Bạn không thiếu kiến thức — bạn thiếu người nhìn vào đúng chỗ bạn đang bị mắc kẹt. Kiến thức chung thì ai cũng có thể cho bạn. Coaching là tìm ra chính xác tại sao bạn cụ thể đang không tiến được."</span></li>
+        <li><strong>"Làm sao tôi biết phương pháp của bạn phù hợp với tôi?"</strong><br><span style="font-size:13px;color:var(--muted);">→ "Mình không biết trước khi nói chuyện với bạn. Đó là lý do mình muốn hiểu tình huống của bạn trước — không phải để thuyết phục, mà để xem có thực sự phù hợp không. Nếu không phù hợp, mình sẽ nói thẳng."</span></li>
+        <li><strong>"Tôi muốn chờ thêm một chút nữa, khi nào sẵn sàng hơn thì bắt đầu."</strong><br><span style="font-size:13px;color:var(--muted);">→ "Cảm giác 'chưa sẵn sàng' đó — mình biết nó trông như gì. Mình cũng từng chờ. Nhưng thị trường không chờ. Câu hỏi không phải là bạn đã sẵn sàng chưa — mà là bạn có sẵn sàng trả giá của việc tiếp tục chờ không."</span></li>
+        <li><strong>"Tôi không chắc mình có thể cam kết đủ thời gian cho coaching."</strong><br><span style="font-size:13px;color:var(--muted);">→ "Nếu bạn không có thời gian để học đúng cách, bạn cũng không có thời gian để tiếp tục mất tiền sai cách. Coaching không tốn thêm thời gian — nó rút ngắn thời gian bạn phải dành cho việc tự tìm ra."</span></li>
+      </ul>
+      <ul class="check-list">
+        <li><strong>"Bạn còn trẻ — làm sao tôi tin bạn đủ kinh nghiệm để dạy tôi?"</strong><br><span style="font-size:13px;color:var(--muted);">→ Không cần bào chữa. Đăng track record thật — lịch sử giao dịch theo tuần, theo tháng. Số liệu không cần tuổi tác để có ý nghĩa. Thêm: "Mình không bán kinh nghiệm năm tháng — mình bán kết quả đã đạt được. Nếu track record không thuyết phục bạn, không ai nên thuyết phục bạn."</span></li>
+        <li><strong>"Tôi muốn tự học trước, nếu không được thì mới cần coach."</strong><br><span style="font-size:13px;color:var(--muted);">→ "Không có gì sai với điều đó. Mình cũng tự học trước — mất 3 năm và khoảng $5,000 USD để học những gì bây giờ mình có thể giúp người khác học trong 3 tháng. Chi phí của việc tự học không phải là tiền học phí — là thời gian và những lỗi không đáng có."</span></li>
+        <li><strong>"Nếu coaching không hiệu quả thì sao? Tôi muốn có bảo đảm."</strong><br><span style="font-size:13px;color:var(--muted);">→ "Mình không thể bảo đảm kết quả vì mình không phải là người ra lệnh thay bạn. Nhưng mình có thể cam kết: nếu bạn làm đúng những gì chúng ta thống nhất và không thấy tiến bộ sau [X tuần], chúng ta sẽ ngồi lại và xem lại từ đầu. Coaching không phải bảo hiểm — là đầu tư vào quá trình."</span></li>
+        <li><strong>"Giá coaching của bạn là bao nhiêu? Có vẻ cao."</strong><br><span style="font-size:13px;color:var(--muted);">→ Không giảm giá. "Mình tốn $350 cho khóa học + $2,000 cho những sai lầm có thể tránh được. Giá coaching của mình thấp hơn tổng chi phí đó — và bạn không mất thêm 2–3 năm. Nếu bạn đang cân nhắc dựa trên giá, câu hỏi đúng không phải 'có đắt không' mà là 'chi phí của việc không học đúng cách là bao nhiêu.'"</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FUNNEL -->
+<section class="section" id="distribution">
+  <div class="section-tag">06 — Phân phối nội dung theo giai đoạn</div>
+  <div class="section-title">Tỷ lệ nội dung từng tháng —<span> không phải lịch cố định theo ngày</span></div>
+
+  <div class="warn"><strong>Nguyên tắc sản xuất:</strong> 3–4 bài/ngày = ~100 bài/tháng. Không sản xuất theo ngày — sản xuất theo nhóm kiểu nội dung (batch by content type). Mỗi tuần chọn 1–2 kiểu nội dung trọng tâm, làm 20–25 bài, lên lịch đăng tự động. Tỷ lệ thay đổi theo từng giai đoạn.</div>
+
+  <!-- PHASE 1 -->
+  <div class="phase-dist pd-m1">
+    <div class="pd-header">
+      <div class="pd-tag">Tháng 1 — Tuần 1–4</div>
+      <div class="pd-title">Giai đoạn xây nền — Xây dựng nhân vật, chưa đề cập offer</div>
+    </div>
+    <div class="pd-body">
+      <div>
+        <div class="pd-col-title">Tỷ lệ kiểu nội dung — ~100 posts tháng này</div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Hành trình</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--blue),rgba(59,130,246,.2));width:40%;"></div><span class="angle-pct">40%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Kiến thức</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--teal),rgba(0,212,170,.2));width:40%;"></div><span class="angle-pct">40%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Flex số</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--gold),rgba(245,200,66,.2));width:20%;"></div><span class="angle-pct">20%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Câu chuyện học viên</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--purple),rgba(168,85,247,.1));width:0%;"></div><span class="angle-pct" style="color:var(--muted);">—</span></div>
+        <div style="margin-top:16px;font-size:13px;color:var(--muted);">Stories: 2–3/ngày — hậu trường, câu hỏi tương tác, Q&amp;A không lọc. Chưa đề cập coaching.</div>
+      </div>
+      <div>
+        <div class="pd-col-title">Chỉ số mục tiêu cuối tháng 1</div>
+        <div class="kpi-grid">
+          <div class="kpi-chip"><div class="kpi-chip-label">Lượt xem/Reel</div><div class="kpi-chip-val teal">5–30k</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Người theo dõi tăng</div><div class="kpi-chip-val teal">+300–800</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Lượt lưu/Carousel</div><div class="kpi-chip-val teal">100+</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">DM tự nhiên</div><div class="kpi-chip-val teal">10+</div></div>
+          <div class="kpi-chip" style="grid-column:1/-1;"><div class="kpi-chip-label">Cột mốc quan trọng</div><div class="kpi-chip-val teal" style="font-size:13px;">Ít nhất 1 Reel đạt 10k+ lượt xem. Lượt trả lời Stories tăng dần mỗi tuần.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase-dist pd-m2">
+    <div class="pd-header">
+      <div class="pd-tag">Tháng 2 — Tuần 5–8</div>
+      <div class="pd-title">Giai đoạn kiểm tra bán hàng — Xây uy tín + Thu thập lead + Đóng sale đầu tiên</div>
+      <p style="font-size:12px;color:var(--muted);padding:0 0 4px;font-style:italic;">Lead: người tiềm năng đã thể hiện sự quan tâm và có khả năng trở thành khách hàng.</p>
+    </div>
+    <div class="pd-body">
+      <div>
+        <div class="pd-col-title">Tỷ lệ kiểu nội dung — ~100 posts tháng này</div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Kiến thức (+ CTA keyword)</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--teal),rgba(0,212,170,.2));width:35%;"></div><span class="angle-pct">35%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Flex số</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--gold),rgba(245,200,66,.2));width:30%;"></div><span class="angle-pct">30%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Hành trình</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--blue),rgba(59,130,246,.2));width:25%;"></div><span class="angle-pct">25%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Câu chuyện học viên</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--purple),rgba(168,85,247,.2));width:10%;"></div><span class="angle-pct">10%</span></div>
+        <div style="margin-top:16px;font-size:13px;color:var(--muted);">Stories tuần 5–6: tiếp tục nuôi dưỡng. Tuần 7: gieo nhẹ về coaching — "mình đang làm việc 1:1 với một số người." Tuần 8: Stories xử lý trực tiếp các phản đối của người theo dõi.</div>
+      </div>
+      <div>
+        <div class="pd-col-title">Chỉ số mục tiêu cuối tháng 2</div>
+        <div class="kpi-grid">
+          <div class="kpi-chip"><div class="kpi-chip-label">Sale coaching</div><div class="kpi-chip-val blue">2–3 sale</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Người vào nhóm</div><div class="kpi-chip-val blue">~50 người</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">DM từ từ khóa CTA</div><div class="kpi-chip-val blue">50+</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Người theo dõi tăng</div><div class="kpi-chip-val blue">+500–1.5k</div></div>
+          <div class="kpi-chip" style="grid-column:1/-1;"><div class="kpi-chip-label">Cột mốc quan trọng</div><div class="kpi-chip-val blue" style="font-size:13px;">Đóng được sale đầu tiên. Nắm được 3 phản đối phổ biến nhất của người theo dõi.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase-dist pd-m3">
+    <div class="pd-header">
+      <div class="pd-tag">Tháng 3 — Tuần 9–12</div>
+      <div class="pd-title">Giai đoạn nhân rộng — Nội dung bằng chứng + Mở Telegram</div>
+    </div>
+    <div class="pd-body">
+      <div>
+        <div class="pd-col-title">Tỷ lệ kiểu nội dung — ~100 posts tháng này</div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Câu chuyện học viên</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--purple),rgba(168,85,247,.2));width:30%;"></div><span class="angle-pct">30%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Kiến thức</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--teal),rgba(0,212,170,.2));width:30%;"></div><span class="angle-pct">30%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Flex số</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--gold),rgba(245,200,66,.2));width:25%;"></div><span class="angle-pct">25%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Hành trình</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--blue),rgba(59,130,246,.2));width:15%;"></div><span class="angle-pct">15%</span></div>
+        <div style="margin-top:16px;font-size:13px;color:var(--muted);">Mở Telegram. Dùng Stories để dẫn người theo dõi vào nhóm. Câu chuyện kết quả từ học viên tháng 2 trở thành kiểu nội dung chủ đạo.</div>
+      </div>
+      <div>
+        <div class="pd-col-title">Chỉ số mục tiêu cuối tháng 3</div>
+        <div class="kpi-grid">
+          <div class="kpi-chip"><div class="kpi-chip-label">Tổng sale</div><div class="kpi-chip-val gold">5–7 sale</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Người vào nhóm</div><div class="kpi-chip-val gold">50–150</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Ca bằng chứng thật</div><div class="kpi-chip-val gold">2–3</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Người theo dõi tăng</div><div class="kpi-chip-val gold">+800–2k</div></div>
+          <div class="kpi-chip" style="grid-column:1/-1;"><div class="kpi-chip-label">Cột mốc quan trọng</div><div class="kpi-chip-val gold" style="font-size:13px;">Telegram đang hoạt động. Nội dung bằng chứng thu hút lead tự nhiên không cần quảng cáo.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase-dist pd-m4">
+    <div class="pd-header">
+      <div class="pd-tag">Tháng 4 — Tuần 13–16</div>
+      <div class="pd-title">Giai đoạn Scale — Tối ưu quy trình + Nhân rộng</div>
+    </div>
+    <div class="pd-body">
+      <div>
+        <div class="pd-col-title">Tỷ lệ kiểu nội dung — ~100 posts tháng này</div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Câu chuyện học viên</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--purple),rgba(168,85,247,.2));width:40%;"></div><span class="angle-pct">40%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Kiến thức</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--teal),rgba(0,212,170,.2));width:25%;"></div><span class="angle-pct">25%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Hành trình</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--blue),rgba(59,130,246,.2));width:20%;"></div><span class="angle-pct">20%</span></div>
+        <div class="angle-ratio-row"><span class="angle-label-sm">Flex số</span><div class="angle-bar" style="background:linear-gradient(90deg,var(--gold),rgba(245,200,66,.2));width:15%;"></div><span class="angle-pct">15%</span></div>
+        <div style="margin-top:16px;font-size:13px;color:var(--muted);">Khan hiếm thật: "Mình chỉ nhận thêm X người trong tháng này." Nhìn lại 4 tháng — nội dung cột mốc tự lan rộng tự nhiên.</div>
+      </div>
+      <div>
+        <div class="pd-col-title">Chỉ số mục tiêu cuối tháng 4</div>
+        <div class="kpi-grid">
+          <div class="kpi-chip"><div class="kpi-chip-label">Tổng sale</div><div class="kpi-chip-val purple">10 sale</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Tổng người theo dõi</div><div class="kpi-chip-val purple">3–6k+</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">Ca bằng chứng thật</div><div class="kpi-chip-val purple">5+</div></div>
+          <div class="kpi-chip"><div class="kpi-chip-label">DM tự nhiên/tháng</div><div class="kpi-chip-val purple">80+</div></div>
+          <div class="kpi-chip" style="grid-column:1/-1;"><div class="kpi-chip-label">Cột mốc quan trọng — SCALE</div><div class="kpi-chip-val purple" style="font-size:13px;">Đây là giai đoạn scale thực sự: quy trình đã được tối ưu, vòng lặp bằng chứng tự chạy, nhân rộng mà không tăng tuyến tính công sức của Kiệt.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="section" id="platform">
+  <div class="section-tag">07 — Telegram vs Discord</div>
+  <div class="section-title">Phân tích platform —<span> cái nào phù hợp với Kiệt?</span></div>
+
+  <div class="platform-row">
+    <div class="platform-card tg-card">
+      <div class="platform-logo">Telegram</div>
+      <div class="platform-subtitle">Messaging-first · Mobile-native · Đơn giản</div>
+      <div class="pro-con-row">
+        <div class="pro-box">
+          <div class="pc-label">Ưu điểm</div>
+          <ul class="pc-list">
+            <li>Hầu hết mọi người đã có sẵn app — không cần tạo tài khoản mới</li>
+            <li>Notification rate cao nhất trong tất cả platforms — tin nhắn được đọc ngay</li>
+            <li>Phổ biến mạnh trong cộng đồng trader quốc tế, đặc biệt ICT và prop firm</li>
+            <li>Kiệt đã quen dùng — không cần learning curve (đường cong học tập)</li>
+            <li>Dễ share link — 1 click join, không cần setup tài khoản phức tạp</li>
+            <li>Channel (phát sóng 1 chiều) + Group (tương tác 2 chiều) — tách biệt rõ ràng</li>
+            <li>Bot ecosystem mạnh — auto-qualify, auto-message, lọc lead tự động</li>
+            <li>Trade signal phù hợp — thông báo real-time tức thì trên mobile</li>
+          </ul>
+        </div>
+        <div class="con-box">
+          <div class="pc-label">Nhược điểm</div>
+          <ul class="pc-list">
+            <li>Không có channel/topic organization tốt như Discord</li>
+            <li>Khó tạo community culture — thiếu roles, levels</li>
+            <li>Group lớn dễ trở thành spam nếu không moderate</li>
+            <li>Ít tính năng gamification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="platform-card dc-card">
+      <div class="platform-logo">Discord</div>
+      <div class="platform-subtitle">Community-first · Channel-based · Richer UX</div>
+      <div class="pro-con-row">
+        <div class="pro-box">
+          <div class="pc-label">Ưu điểm</div>
+          <ul class="pc-list">
+            <li>Channel structure rõ ràng: #signals, #education, #wins, #questions</li>
+            <li>Roles system — tạo hierarchy và exclusivity tự nhiên</li>
+            <li>Phổ biến trong international finance community (ICT, prop firm)</li>
+            <li>Voice channel — có thể làm live session trực tiếp</li>
+            <li>Community culture mạnh hơn — members kết nối với nhau</li>
+            <li>Bots mạnh: welcome flow, auto-assign roles, gating content</li>
+          </ul>
+        </div>
+        <div class="con-box">
+          <div class="pc-label">Nhược điểm</div>
+          <ul class="pc-list">
+            <li>Ít quen thuộc hơn với người mới — friction (cản trở) cao hơn khi onboard lần đầu</li>
+            <li>Notification mặc định bị tắt — phải tự configure, nhiều người bỏ qua bước này</li>
+            <li>Mobile UX không tốt bằng Telegram — nặng hơn, chậm hơn trên điện thoại</li>
+            <li>Cần setup nhiều hơn để hoạt động tốt — roles, channels, permissions, welcome bot</li>
+            <li>Learning curve cho cả Kiệt lẫn members — mất 1–2 tuần để mọi người quen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="verdict-block">
+    <div class="verdict-label">Khuyến nghị cho Kiệt</div>
+    <div class="verdict-text">Bắt đầu với Telegram. Mở Discord khi community đủ lớn và cần structure phức tạp hơn.</div>
+    <div class="verdict-sub">Kiệt đã quen với Telegram, cộng đồng trader ICT quốc tế dùng Telegram rộng rãi, và ở giai đoạn tốc độ cao này — friction (cản trở khi tham gia) thấp nhất thắng. Telegram cho phép launch ngay trong tuần đầu tháng 3 mà không mất thời gian setup. Discord phù hợp hơn ở giai đoạn sau — khi community cần channel riêng cho signals, education, wins, và Q&A, và khi members đã đủ committed để chấp nhận một platform mới (tháng 5+).</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Cách dùng Telegram để nurture và close coaching</div>
+    <div class="grid-2" style="margin-top:16px;gap:20px;">
+      <ul class="check-list">
+        <li><strong>Channel (broadcast):</strong> Kiệt đăng trade real-time, market insight hàng sáng, lesson ngắn. Members đọc — không reply. Đây là track record công khai.</li>
+        <li><strong>Group (2 chiều):</strong> Members hỏi, Kiệt trả lời. Conversation tự nhiên → coaching leads xuất hiện từ đây. Ai hỏi câu hỏi đúng → Kiệt invite DM.</li>
+        <li><strong>Pinned message:</strong> Coaching offer luôn visible ở đầu group. Không cần nhắc — nó ở đó.</li>
+      </ul>
+      <ul class="check-list">
+        <li><strong>Weekly live:</strong> Voice chat trong group 30 phút mỗi tuần — market recap, Q&amp;A. Ai tham gia đều là warm lead.</li>
+        <li><strong>Từ Stories → Telegram:</strong> "Join Telegram mình để xem trade real-time" — Stories drive traffic vào platform.</li>
+        <li><strong>Close trong DM:</strong> Conversation trong group → move sang DM → discovery call. Không close công khai trong group.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT ANGLES -->
+<section class="section" id="angles">
+  <div class="section-tag">08 — Góc độ nội dung</div>
+  <div class="section-title">4 kiểu nội dung —<span> triển khai thực tế</span></div>
+
+
+  <div class="angle-block ab-2" style="margin-bottom:24px;">
+    <div class="angle-header">
+      <div><div class="angle-num">Kiểu 01</div><div class="angle-name">Nội dung kiến thức</div></div>
+      <div class="angle-badge badge-teal">Reels · Talking head · AI voiceover</div>
+    </div>
+    <div class="angle-body">
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Chủ đề</div>
+          <p>Phân tích thị trường, chiến lược vào lệnh, quản lý rủi ro, tâm lý giao dịch</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Triển khai</div>
+          <p>Quay talking head bằng tiếng Việt → dùng Rask AI hoặc HeyGen để dub tiếng Anh</p>
+        </div>
+      </div>
+      <div class="angle-meta">
+        <div class="meta-pill"><strong>Format:</strong> Reels dọc 60–90 giây / Carousel tips</div>
+        <div class="meta-pill"><strong>Tools:</strong> CapCut · Rask AI · HeyGen · ManyChat (CTA keyword)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="angle-block ab-4" style="margin-bottom:24px;">
+    <div class="angle-header">
+      <div><div class="angle-num">Kiểu 02</div><div class="angle-name">Nội dung kể chuyện hành trình</div></div>
+      <div class="angle-badge badge-blue">Carousel · Reels text overlay · Ảnh thật</div>
+    </div>
+    <div class="angle-body">
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Chủ đề</div>
+          <p>Hành trình từ newbie đến consistent trader, những sai lầm đã qua, bước ngoặt thật</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Triển khai</div>
+          <p>Carousel ảnh thật (ảnh cũ + ảnh hiện tại) + Reels text overlay kể chuyện</p>
+        </div>
+      </div>
+      <div class="angle-meta">
+        <div class="meta-pill"><strong>Format:</strong> Carousel 8–12 slides / Reels narrative</div>
+        <div class="meta-pill"><strong>Tools:</strong> Canva · CapCut</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="angle-block ab-3" style="margin-bottom:24px;">
+    <div class="angle-header">
+      <div><div class="angle-num">Kiểu 03</div><div class="angle-name">Nội dung flex số &amp; kết quả thật</div></div>
+      <div class="angle-badge badge-gold">Reels · Screen record + face cam · Không dàn dựng</div>
+    </div>
+    <div class="angle-body">
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Chủ đề</div>
+          <p>Track record tuần/tháng, P&amp;L screenshot thật, số học viên đạt kết quả</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Triển khai</div>
+          <p>Screen record dashboard + face cam giải thích ngắn, không cần dàn dựng</p>
+        </div>
+      </div>
+      <div class="angle-meta">
+        <div class="meta-pill"><strong>Format:</strong> Reels 30–60 giây / Stories</div>
+        <div class="meta-pill"><strong>Tools:</strong> Screen recorder · CapCut</div>
+        <div class="meta-pill"><strong>Lưu ý pháp lý:</strong> Không tên sàn, không gọi forex</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="angle-block ab-5" style="margin-bottom:0;">
+    <div class="angle-header">
+      <div><div class="angle-num">Kiểu 04</div><div class="angle-name">Nội dung câu chuyện học viên</div></div>
+      <div class="angle-badge badge-purple">Reels · Phỏng vấn thật · Giọng học viên</div>
+    </div>
+    <div class="angle-body">
+      <div class="angle-row">
+        <div class="angle-box">
+          <div class="angle-box-label">Chủ đề</div>
+          <p>Hành trình thật của học viên: xuất phát điểm, quá trình, kết quả cụ thể</p>
+        </div>
+        <div class="angle-box">
+          <div class="angle-box-label">Triển khai</div>
+          <p>Phỏng vấn học viên (video call hoặc voice note) → cắt highlight, để giọng thật, không scripted</p>
+        </div>
+      </div>
+      <div class="angle-meta">
+        <div class="meta-pill"><strong>Format:</strong> Reels 60–90 giây / Carousel trích dẫn</div>
+        <div class="meta-pill"><strong>Tools:</strong> Zoom / Loom · CapCut</div>
+        <div class="meta-pill"><strong>Lưu ý:</strong> Urgency &amp; social proof đến tự nhiên — không cần thêm copywriting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI TOOLS -->
+<section class="section" id="tools">
+  <div class="section-tag">09 — Hệ thống tối ưu công việc</div>
+  <div class="section-title">Công việc cần làm —<span> AI chỉ là công cụ xử lý</span></div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:32px;">Liệt kê theo công việc thực tế cần làm mỗi ngày. Với mỗi công việc: thủ công mất bao lâu, tối ưu còn bao lâu, và công cụ nào xử lý. Mục tiêu: 1 người vận hành được lượng công việc của cả team.</p>
+
+  <div style="display:flex;flex-direction:column;gap:14px;">
+
+    <div class="card" style="display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;padding:20px 28px;">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:6px;">Công việc 01</div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:6px;">Viết script, hook và caption hàng ngày</div>
+        <div style="font-size:13px;color:var(--muted);">3–4 bài/ngày, mỗi bài cần hook + script + caption. Batch cả tuần vào 1 buổi cuối tuần thay vì viết rải rác mỗi ngày.</div>
+      </div>
+      <div style="text-align:center;background:rgba(0,212,170,.08);border:1px solid rgba(0,212,170,.2);border-radius:8px;padding:10px;"><div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Công cụ</div><div style="font-size:13px;font-weight:700;color:var(--teal);">Claude / ChatGPT</div></div>
+    </div>
+
+    <div class="card" style="display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;padding:20px 28px;">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:6px;">Công việc 02</div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:6px;">Thêm phụ đề và chỉnh sửa video</div>
+        <div style="font-size:13px;color:var(--muted);">Mọi Reel bắt buộc có phụ đề — phần lớn người xem tắt tiếng trên mobile. Setup template 1 lần, áp dụng mọi video về sau.</div>
+      </div>
+      <div style="text-align:center;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:10px;"><div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Công cụ</div><div style="font-size:13px;font-weight:700;color:var(--blue);">CapCut · Submagic</div></div>
+    </div>
+
+    <div class="card" style="display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;padding:20px 28px;">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple);margin-bottom:6px;">Công việc 03</div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:6px;">Tự động hóa thu thập người quan tâm qua DM</div>
+        <div style="font-size:13px;color:var(--muted);">Mỗi bài có CTA từ khóa → hàng trăm người comment → không thể reply thủ công. Hệ thống tự gửi DM, tự lọc người nghiêm túc, tự mở cuộc trò chuyện — Kiệt chỉ tiếp quản khi có người đủ điều kiện.</div>
+      </div>
+      <div style="text-align:center;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);border-radius:8px;padding:10px;"><div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Công cụ</div><div style="font-size:13px;font-weight:700;color:var(--purple);">ManyChat</div></div>
+    </div>
+
+    <div class="card" style="display:grid;grid-template-columns:1fr 200px;gap:20px;align-items:center;padding:20px 28px;">
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:6px;">Công việc 04</div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:6px;">Nhân bản nội dung sang thị trường quốc tế</div>
+        <div style="font-size:13px;color:var(--muted);">1 Reel tiếng Việt → dịch và lồng tiếng Anh giữ nguyên giọng Kiệt. Tiếp cận thị trường quốc tế mà không cần quay lại hay thuê người dịch.</div>
+      </div>
+      <div style="text-align:center;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:10px;"><div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;">Công cụ</div><div style="font-size:13px;font-weight:700;color:var(--red);">Rask AI</div></div>
+    </div>
+
+  </div>
+
+</section>
+
 <footer class="footer">
-  <div class="footer-logo">SOS Agency</div>
-  <div class="footer-sub">Prepared for Kiệt Finance — April 2026 · Confidential</div>
+  <div class="footer-logo">Kiệt × SOS Agency</div>
+  <div class="footer-sub">Strategy v2.2 — April 2026 · 10 High-Ticket Sales · 4-Month Sprint · International Market</div>
 </footer>
 
 </body>
